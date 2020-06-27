@@ -9027,7 +9027,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		contestType: "Tough",
     },
     houdinisflames: {
-        num: -2,
+        num: 820,
         accuracy: 90,
         basePower: 75,
         category: "Special",
@@ -9037,13 +9037,14 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
         pp: 15,
         priority: 0,
         flags: {protect: 1, mirror: 1},
+        isNonstandard: "Past",
         effect: {
             
             onHit(source, target, move) {
                 if(target.types.includes("Dark") && source.ability.includes("Prankster")){
                     return;
               }
-            else if(target.side.getSideCondition('reflect') || target.side.getSideCondition('lightscreen') || target.side.getSideCondition('auroraveil')){
+            else if(target.side.sideConditions){
                 this.modifyDamage(37, source, target, move);
             }
           }
@@ -9053,6 +9054,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
         target.side.removeSideCondition('lightscreen');
         target.side.removeSideCondition('auroraveil');
     },
+    secondary: null,
         target: "normal",
         type: "Dark",
         contestType: "Cool"

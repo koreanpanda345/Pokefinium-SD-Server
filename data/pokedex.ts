@@ -1,6 +1,6 @@
 export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
     mantomoto: {
-        num:-1,
+        num:-5004,
         name: "Mantomoto",
         types: ["Bug", "Fighting"],
         genderRatio: {M: 0.5, F: 0.5},
@@ -12,7 +12,7 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         eggGroups: ["Bug"]
     },
     cunilagus: {
-        num:-1,
+        num:-5002,
         name: "Cunilagus",
         types: ["Fire", "Dark"],
         genderRatio: {M: 0.5, F: 0.5},
@@ -21,10 +21,10 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         heightm: 10,
         weightkg: 45,
         color: "White",
-        eggGroups: []
+        eggGroups: ["Monster"]
     },
     maskpie: {
-        num: -1,
+        num: -5003,
         name: "Maskpie",
         types: ["Normal", "Flying"],
         genderRatio:{M: 0.5, F: 0.5},
@@ -37,7 +37,7 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
 
     },
     magpocket: {
-		num: -3,
+		num: -5005,
 		name: "Magpocket",
 		types: ["Dark", "Flying"],
 		genderRatio: {M: 0.875, F: 0.125},
