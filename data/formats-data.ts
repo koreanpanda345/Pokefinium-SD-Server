@@ -1,5 +1,14 @@
 export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
-	bulbasaur: {
+    cunilagus: {
+        tier: "CAP"
+    },
+    magpocket: {
+        tier: "CAP"
+    },
+    mantomoto: {
+        tier: "CAP"
+    },
+    bulbasaur: {
 		tier: "LC",
 	},
 	ivysaur: {

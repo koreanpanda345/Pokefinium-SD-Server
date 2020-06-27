@@ -3055,7 +3055,23 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Poison",
 		contestType: "Cool",
-	},
+    },
+    crossslash: {
+        num: -1,
+        accuracy: 85,
+        basePower: 70,
+        category: "Physical",
+        desc: "",
+        shortDesc: "",
+        name: "Cross Slash",
+        pp: 20,
+        priority: 0,
+        flags: {contact: 1, protect: 1, mirror: 1, slash: 1},
+        critRatio: 1,
+        target: "normal",
+        type: "Bug",
+        contestType: "Cool"
+    },
 	crunch: {
 		num: 242,
 		accuracy: 100,
@@ -9009,7 +9025,38 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Grass",
 		contestType: "Tough",
-	},
+    },
+    houdinisflames: {
+        num: -2,
+        accuracy: 90,
+        basePower: 75,
+        category: "Special",
+        desc: "If screens/protect are up, target takes 1/2 damage, and breaks screens/protect. If Prankster is its ability, this move is effected by it, and the user will go first. If the target is a dark type, and the user's ability is Prankster, this move will fail.",
+        shortDesc: "This move will break screens if any are up, but the target will take 1/2 damage it would have recieved. This move is effected by Prankster, and user will go first.",
+        name: "Houdini's Flames",
+        pp: 15,
+        priority: 0,
+        flags: {protect: 1, mirror: 1},
+        effect: {
+            
+            onHit(source, target, move) {
+                if(target.types.includes("Dark") && source.ability.includes("Prankster")){
+                    return;
+              }
+            else if(target.side.getSideCondition('reflect') || target.side.getSideCondition('lightscreen') || target.side.getSideCondition('auroraveil')){
+                this.modifyDamage(37, source, target, move);
+            }
+          }
+    },
+    onTryHit(target) { 
+        target.side.removeSideCondition('reflect');
+        target.side.removeSideCondition('lightscreen');
+        target.side.removeSideCondition('auroraveil');
+    },
+        target: "normal",
+        type: "Dark",
+        contestType: "Cool"
+    },
 	howl: {
 		num: 336,
 		accuracy: true,
@@ -10110,7 +10157,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		name: "Leaf Blade",
 		pp: 15,
 		priority: 0,
-		flags: {contact: 1, protect: 1, mirror: 1},
+		flags: {contact: 1, protect: 1, mirror: 1, slash: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",

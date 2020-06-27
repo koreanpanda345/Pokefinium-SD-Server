@@ -1,5 +1,54 @@
 export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
-	bulbasaur: {
+    mantomoto: {
+        num:-1,
+        name: "Mantomoto",
+        types: ["Bug", "Fighting"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 100, atk: 120, def: 85, spa: 60, spd: 75, spe: 100},
+        abilities: {0: "Battle Armor", 1:"Defiant", H: "Last Stand"},
+        heightm: 20,
+        weightkg: 50,
+        color: "Red",
+        eggGroups: ["Bug"]
+    },
+    cunilagus: {
+        num:-1,
+        name: "Cunilagus",
+        types: ["Fire", "Dark"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 90, atk: 55, def:75, spa: 120, spd: 100, spe: 90},
+        abilities: {0: "Prankster", 1: "Magician", H: "Illusion"},
+        heightm: 10,
+        weightkg: 45,
+        color: "White",
+        eggGroups: []
+    },
+    maskpie: {
+        num: -1,
+        name: "Maskpie",
+        types: ["Normal", "Flying"],
+        genderRatio:{M: 0.5, F: 0.5},
+        baseStats: {hp: 40, atk: 45, def: 30, spa: 40, spd: 30, spe: 65},
+        abilities: {0: "Pickup", H: "Frisk"},
+        heightm: 2,
+        weightkg: 100,
+        color: "",
+        eggGroups: ["Flying"],
+
+    },
+    magpocket: {
+		num: -3,
+		name: "Magpocket",
+		types: ["Dark", "Flying"],
+		genderRatio: {M: 0.875, F: 0.125},
+		baseStats: {hp: 70, atk: 100, def: 65, spa: 80, spd: 65, spe: 127},
+		abilities: {0: "Pickup", H: "Frisk"},
+		heightm: 2,
+		weightkg: 100,
+		color: "purple",
+		eggGroups: ["Flying"],
+    },
+    bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",
 		types: ["Grass", "Poison"],
