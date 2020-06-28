@@ -16806,18 +16806,4 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		gen: 5,
 	},
-    rickastley: {
-        num: 1,
-        species: "RickAstley",
-        types: ['Fire', 'Water'],
-        genderRatio: {'M': 0.5, 'F': 0.5},
-        baseStats: {'hp': 5, 'atk': 5, 'def': 5, 'spa': 5, 'spd': 5, 'spe': 5},
-        abilities: {'0': 'Gluttony', '1': 'Thick Fat', 'H': 'Iron Fist'},
-        heightm: 0.5,
-        weightkg: 60,
-        color: "Red",
-        evos: ['Richard Buttockstley'],
-        eggGroups: ['Fat']
-    },
 };
-        
