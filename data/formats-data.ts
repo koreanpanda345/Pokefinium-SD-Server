@@ -5794,9 +5794,4 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
-    rickastley: {
-            isNonStandard: "Cap",
-            tier: "CAP"
-    },
-}; 
-        
+};
