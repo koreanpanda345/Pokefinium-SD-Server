@@ -23,7 +23,7 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
     },
     cunilagus: {
         learnset: {
-            houdinisflames: ["8L1"],
+            houdinisflames: ["8L1", "7L1"],
             courtchange: ["8L1"],
             fireblast: ["8L1"],
             flamethrower: ["8L1"],
