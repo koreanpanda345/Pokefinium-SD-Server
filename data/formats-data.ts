@@ -1,14 +1,30 @@
 export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
-    cunilagus: {
-        isNonstandard: "Past",
-        tier: "CAP",
+    magpie: {
+        isNonstandard: "Custom",
+        tier: "CAP LC"
+    },
+    snagpie: {
+        isNonstandard: "Custom",
+        tier: "CAP NFE"
     },
     magpocket: {
-        isNonstandard: "Past",
+        isNonstandard: "Custom",
         tier: "CAP"
     },
+    orycto: {
+        isNonstandard: "Custom",
+        tier: "CAP LC"
+    },
+    oryculus: {
+        isNonstandard: "Custom",
+        tier: "CAP NFE"
+    },
+    cunilagus: {
+        isNonstandard: "Custom",
+        tier: "CAP",
+    },
     mantomoto: {
-        isNonstandard: "Past",
+        isNonstandard: "Custom",
         tier: "CAP"
     },
     bulbasaur: {

@@ -1,6 +1,33 @@
 /* eslint-disable max-len */
 
 export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
+    magpie: {
+        learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"]
+        }
+    },
+    snagpie: {
+        learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"]
+        }
+    },
+    magpocket: {
+		learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"]
+        },
+	},
     mantomoto: {
         learnset: {
             brickbreak: ["8L1"],
@@ -20,6 +47,42 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
             crossslash: ["8L1"],
             slash: ["8L1"]
         }
+    },
+    orycto: {
+        learnset: {
+            courtchange: ["8L1"],
+            fireblast: ["8L1"],
+            flamethrower: ["8L1"],
+            darkpulse: ["8L1"],
+            toxic: ["8L1"],
+            thunderwave: ["8L1"],
+            calmmind: ["8L1"],
+            focusblast: ["8L1"],
+            reflect: ["8L1"],
+            lightscreen: ["8L1"],
+            scald: ["8L1"],
+            mysticalfire: ["8L1"],
+            psychic: ["8L1"],
+            psybeam: ["8L1"],
+        },
+    },
+    oryculus: {
+        learnset: {
+            courtchange: ["8L1"],
+            fireblast: ["8L1"],
+            flamethrower: ["8L1"],
+            darkpulse: ["8L1"],
+            toxic: ["8L1"],
+            thunderwave: ["8L1"],
+            calmmind: ["8L1"],
+            focusblast: ["8L1"],
+            reflect: ["8L1"],
+            lightscreen: ["8L1"],
+            scald: ["8L1"],
+            mysticalfire: ["8L1"],
+            psychic: ["8L1"],
+            psybeam: ["8L1"],
+        },
     },
     cunilagus: {
         learnset: {
@@ -41,15 +104,6 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
 
         },
     },
-    magpocket: {
-		learnset: {
-            darkestlariat: ["8L1"],
-            bravebird: ["8L1"],
-            roost: ["8L1"],
-            swordsdance: ["8L1"],
-            pluck: ["8L1"]
-        },
-	},
     missingno: {
 		learnset: {
 			blizzard: ["3L1"],
