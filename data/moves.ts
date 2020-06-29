@@ -15659,7 +15659,33 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Beautiful",
-	},
+    },
+    roundhouse: {
+        num: -101,
+        accuracy: 100,
+        basePower: 75,
+        category: "Physical",
+        desc: "",
+        shortDesc: "",
+        name: "Roundhouse",
+        pp: 15,
+        priority: 0,
+        flags: {protect: 1, mirror: 1, contact: 1},
+        effect: {
+            onFoeBeforeTurn(pokemon) {
+                if(pokemon.moveLastTurnResult == null)
+                    this.modifyDamage(0x96, source, target, move);
+            },
+            onHit(target, source, move) {
+                if(target.moveLastTurnResult == null) { //assuming they were flinched.
+                    this.modifyDamage(0x96, source, target, move);
+                }
+            }
+        },
+        type: "Fighting",
+        target: "normal",
+        
+    },
 	sacredfire: {
 		num: 221,
 		accuracy: 95,

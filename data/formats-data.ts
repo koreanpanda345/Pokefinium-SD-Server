@@ -23,6 +23,10 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
         isNonstandard: "Custom",
         tier: "CAP",
     },
+    gorouchu: {
+        isNonstandard: "Custom",
+        tier: "CAP"
+    },
     mantomoto: {
         isNonstandard: "Custom",
         tier: "CAP"

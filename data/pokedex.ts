@@ -84,6 +84,18 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         color: "White",
         eggGroups: ["Monster"]
     },
+    gorouchu: {
+        num: -5009,
+        name: "Gorouchu",
+        types: ["Electric", "Fighting"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 60, atk: 105, def: 55, spa: 80, spd: 85, spe: 110},
+        abilities: {0: "Static", 1: "Volt Absorb", H: "Inner Focus"},
+        heightm: 0.6,
+        weightkg: 10,
+        color: "Red",
+        eggGroups: ["Field", "Fairy"],
+    },
     bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",
