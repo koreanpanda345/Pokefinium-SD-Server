@@ -18823,7 +18823,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
         target: 'self',
         effect: {
             onHit(target) {
-                if(target.hp <= target.maxhp || (target.boosts.def >= 6 || target.boosts.spd >= 6 || target.maxhp === 1)) {
+                if (target.hp <= target.maxhp / 2 || target.boosts.def >= 6 || target.boosts.spd >= 6 || target.maxhp === 1) { // Shedinja clause
                     return false;
                 }
                 this.directDamage(target.maxhp / 2);
