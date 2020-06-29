@@ -15672,10 +15672,6 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
         priority: 0,
         flags: {protect: 1, mirror: 1, contact: 1},
         effect: {
-            onFoeBeforeTurn(pokemon) {
-                if(pokemon.moveLastTurnResult == null)
-                    this.modifyDamage(0x96, source, target, move);
-            },
             onHit(target, source, move) {
                 if(target.moveLastTurnResult == null) { //assuming they were flinched.
                     this.modifyDamage(0x96, source, target, move);
@@ -18812,7 +18808,35 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Tough",
-	},
+    },
+    sweetguard: {
+        num: 256,
+        accuracy: true,
+        basePower: 0,
+        category: "Status",
+        desc: "",
+        shortDesc: "",
+        name: "Sweet Guard",
+        pp: 10,
+        priority: 0,
+        flags: {snatch: 1},
+        target: 'self',
+        effect: {
+            onHit(target) {
+                if(target.hp <= target.maxhp || (target.boosts.def >= 6 || target.boosts.spd >= 6 || target.maxhp === 1)) {
+                    return false;
+                }
+                this.directDamage(target.maxhp / 2);
+                this.boost({def: 12, spd: 12}, target);
+            }
+        },
+        secondary: {
+            chance: 30,
+            volatileStatus: "flinch"
+        },
+        type: "Psychic",
+    },
+
 	sweetkiss: {
 		num: 186,
 		accuracy: 75,

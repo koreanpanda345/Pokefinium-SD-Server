@@ -117,6 +117,16 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
             bodyslam: ["8L1"]
         }
     },
+    loliama: {
+        learnset: {
+            sweetguard: ["8L1"]
+        }
+    },
+    cottonama: {
+        learnset: {
+            sweetguard: ["8L1"]
+        }
+    },
     missingno: {
 		learnset: {
 			blizzard: ["3L1"],

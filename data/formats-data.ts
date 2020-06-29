@@ -31,6 +31,14 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
         isNonstandard: "Custom",
         tier: "CAP"
     },
+    loliama: {
+        isNonstandard: "Custom",
+        tier: "CAP LC"
+    },
+    cottonama: {
+        isNonstandard: "Custom",
+        tier: "CAP"
+    },
     bulbasaur: {
 		tier: "LC",
 	},
