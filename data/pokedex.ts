@@ -16819,5 +16819,19 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         evos: ['Richard Buttockstley'],
         eggGroups: ['Fat']
     },
+    gorouchu: {
+        num: 1,
+        species: "Gorouchu",
+        types: ['Electric', 'Fighting'],
+        genderRatio: {'M': 0.5, 'F': 0.5},
+        baseStats: {'hp': 60, 'atk': 105, 'def': 55, 'spa': 80, 'spd': 85, 'spe': 110},
+        abilities: {'0': 'Static', '1': 'Volt Absorb', 'H': 'Inner Focus'},
+        heightm: 1,
+        weightkg: 40,
+        color: "Orange",
+        evos: [''],
+        eggGroups: ['Field', 'Fairy']
+    },
 };
+        
         
