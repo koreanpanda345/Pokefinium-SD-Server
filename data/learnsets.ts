@@ -1,6 +1,33 @@
 /* eslint-disable max-len */
 
 export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
+    magpie: {
+        learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"]
+        }
+    },
+    snagpie: {
+        learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"]
+        }
+    },
+    magpocket: {
+		learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"]
+        },
+	},
     mantomoto: {
         learnset: {
             brickbreak: ["8L1"],
@@ -21,9 +48,45 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
             slash: ["8L1"]
         }
     },
+    orycto: {
+        learnset: {
+            courtchange: ["8L1"],
+            fireblast: ["8L1"],
+            flamethrower: ["8L1"],
+            darkpulse: ["8L1"],
+            toxic: ["8L1"],
+            thunderwave: ["8L1"],
+            calmmind: ["8L1"],
+            focusblast: ["8L1"],
+            reflect: ["8L1"],
+            lightscreen: ["8L1"],
+            scald: ["8L1"],
+            mysticalfire: ["8L1"],
+            psychic: ["8L1"],
+            psybeam: ["8L1"],
+        },
+    },
+    oryculus: {
+        learnset: {
+            courtchange: ["8L1"],
+            fireblast: ["8L1"],
+            flamethrower: ["8L1"],
+            darkpulse: ["8L1"],
+            toxic: ["8L1"],
+            thunderwave: ["8L1"],
+            calmmind: ["8L1"],
+            focusblast: ["8L1"],
+            reflect: ["8L1"],
+            lightscreen: ["8L1"],
+            scald: ["8L1"],
+            mysticalfire: ["8L1"],
+            psychic: ["8L1"],
+            psybeam: ["8L1"],
+        },
+    },
     cunilagus: {
         learnset: {
-            houdinisflames: ["8L1"],
+            houdinisflames: ["8L1", "7L1"],
             courtchange: ["8L1"],
             fireblast: ["8L1"],
             flamethrower: ["8L1"],
@@ -41,15 +104,29 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
 
         },
     },
-    magpocket: {
-		learnset: {
-            darkestlariat: ["8L1"],
-            bravebird: ["8L1"],
-            roost: ["8L1"],
-            swordsdance: ["8L1"],
-            pluck: ["8L1"]
-        },
-	},
+    gorouchu: {
+        learnset: {
+            roundhouse: ["8L1", "7L1"],
+            highjumpkick: ["8L1"],
+            bulkup: ["8L1"],
+            thunderpuch: ["8L1"],
+            mefirst: ["8L1"],
+            voltswitch: ["8L1"],
+            fakeout: ["8L1"],
+            irontail: ["8L1"],
+            bodyslam: ["8L1"]
+        }
+    },
+    loliama: {
+        learnset: {
+            sweetguard: ["8L1"]
+        }
+    },
+    cottonama: {
+        learnset: {
+            sweetguard: ["8L1"]
+        }
+    },
     missingno: {
 		learnset: {
 			blizzard: ["3L1"],
@@ -80382,6 +80459,7 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
 			{generation: 5, level: 47, moves: ["darkpulse", "flamethrower", "hyperbeam", "icebeam"]},
 		],
 	},
+<<<<<<< HEAD
     rickastley: {
         learnset: {}
     },
@@ -80395,3 +80473,6 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
         
         
         
+=======
+};
+>>>>>>> c667f756186a63195569dc7a7f2e75b829ebc821

@@ -1,30 +1,6 @@
 export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
-    mantomoto: {
-        num:-5004,
-        name: "Mantomoto",
-        types: ["Bug", "Fighting"],
-        genderRatio: {M: 0.5, F: 0.5},
-        baseStats: {hp: 100, atk: 120, def: 85, spa: 60, spd: 75, spe: 100},
-        abilities: {0: "Battle Armor", 1:"Defiant", H: "Last Stand"},
-        heightm: 20,
-        weightkg: 50,
-        color: "Red",
-        eggGroups: ["Bug"]
-    },
-    cunilagus: {
-        num:-5002,
-        name: "Cunilagus",
-        types: ["Fire", "Dark"],
-        genderRatio: {M: 0.5, F: 0.5},
-        baseStats: {hp: 90, atk: 55, def:75, spa: 120, spd: 100, spe: 90},
-        abilities: {0: "Prankster", 1: "Magician", H: "Illusion"},
-        heightm: 10,
-        weightkg: 45,
-        color: "White",
-        eggGroups: ["Monster"]
-    },
     maskpie: {
-        num: -5003,
+        num: -5002,
         name: "Maskpie",
         types: ["Normal", "Flying"],
         genderRatio:{M: 0.5, F: 0.5},
@@ -36,8 +12,20 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         eggGroups: ["Flying"],
 
     },
+    snagpie: {
+        num: -5003,
+        name: "Snagpie",
+        types: ["Dark", "Flying"],
+        genderRatio: {M:0.5, F: 0.5},
+        baseStats: {hp: 50, atk: 70, def: 45, spa: 65, spd: 45, spe: 85},
+        abilities: {0: "Pickup", 1: "Frisk"},
+        heightm: 2,
+        weightkg: 20,
+        color: "purple",
+        eggGroups: ["Flying"]
+    },
     magpocket: {
-		num: -5005,
+		num: -5004,
 		name: "Magpocket",
 		types: ["Dark", "Flying"],
 		genderRatio: {M: 0.875, F: 0.125},
@@ -47,6 +35,90 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 100,
 		color: "purple",
 		eggGroups: ["Flying"],
+    },
+    mantomoto: {
+        num:-5005,
+        name: "Mantomoto",
+        types: ["Bug", "Fighting"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 100, atk: 120, def: 85, spa: 60, spd: 75, spe: 100},
+        abilities: {0: "Battle Armor", 1:"Defiant", H: "Last Stand"},
+        heightm: 20,
+        weightkg: 50,
+        color: "Red",
+        eggGroups: ["Bug"]
+    },
+    orycto: {
+        num: -5006,
+        name: "Orycto",
+        types: ["Fire"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 50, atk: 30, def: 40, spa: 71, spd: 50, spe: 69},
+        abilities: {0: "Prankster", 1: "Defiant", H: "Illusion"},
+        heightm: 4,
+        weightkg: 20,
+        color: "White",
+        eggGroups: ["Monster"],
+    },
+    oryculus: {
+        num: -5007,
+        name: "Oryculus",
+        types: ["Fire", "Dark"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 75, atk: 45, def: 60, spa: 90, spd: 70, spe: 80},
+        abilities: {0: "Prankster", 1: "Magician", H: "Illusion"},
+        heightm: 6,
+        weightkg: 30,
+        color: "White",
+        eggGroups: ["Monster"]
+    },
+    cunilagus: {
+        num:-5008,
+        name: "Cunilagus",
+        types: ["Fire", "Dark"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 90, atk: 55, def:75, spa: 120, spd: 100, spe: 90},
+        abilities: {0: "Prankster", 1: "Magician", H: "Illusion"},
+        heightm: 10,
+        weightkg: 45,
+        color: "White",
+        eggGroups: ["Monster"]
+    },
+    gorouchu: {
+        num: -5009,
+        name: "Gorouchu",
+        types: ["Electric", "Fighting"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 60, atk: 105, def: 55, spa: 80, spd: 85, spe: 110},
+        abilities: {0: "Static", 1: "Volt Absorb", H: "Inner Focus"},
+        heightm: 0.6,
+        weightkg: 10,
+        color: "Red",
+        eggGroups: ["Field", "Fairy"],
+    },
+    loliama: {
+        num: -5010,
+        name: "Loliama",
+        types: ["Fairy", "Psychic"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 60, atk: 30, def: 60, spa: 55, spd: 80, spe: 35},
+        abilities: {0: "Aroma Veil", 1: "Sweet Veil", H: "Fluffy"},
+        heightm: 1,
+        weightkg: 10,
+        color: "Cotton Candy",
+        eggGroups: ["Candy"]
+    },
+    cottonama: {
+        num: -5011,
+        name: "Cottonama",
+        types: ["Fairy", "Psychic"],
+        genderRatio: {M: 0.5, F: 0.5},
+        baseStats: {hp: 80, atk: 50, def: 100, spa: 95, spd: 130, spe: 45},
+        abilities: {0: "Aroma Veil", 1: "Sweet Veil", H: "Fluffy"},
+        heightm: 2,
+        weightkg: 15,
+        color: "Cotton Candy",
+        eggGroups: ["Candy"],
     },
     bulbasaur: {
 		num: 1,
@@ -16806,6 +16878,7 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		gen: 5,
 	},
+<<<<<<< HEAD
     rickastley: {
         num: 1,
         species: "RickAstley",
@@ -16849,3 +16922,6 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         
         
         
+=======
+};
+>>>>>>> c667f756186a63195569dc7a7f2e75b829ebc821

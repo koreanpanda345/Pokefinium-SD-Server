@@ -3061,9 +3061,14 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
         accuracy: 85,
         basePower: 70,
         category: "Physical",
-        desc: "",
-        shortDesc: "",
+        desc: "The user slash in a cross shape. If the user lands a critical hit, it will do more damage.",
+        shortDesc: "If this move lands in a critical hit, the power of this move is increased by 1.3x",
         name: "Cross Slash",
+        effect: {
+            onCriticalHit(target, source, move) {
+                move.basePower = 0x5B; //70 * (1/3) = 91
+            }
+        },
         pp: 20,
         priority: 0,
         flags: {contact: 1, protect: 1, mirror: 1, slash: 1},
@@ -9027,7 +9032,7 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		contestType: "Tough",
     },
     houdinisflames: {
-        num: 820,
+        num: 810,
         accuracy: 90,
         basePower: 75,
         category: "Special",
@@ -9037,7 +9042,6 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
         pp: 15,
         priority: 0,
         flags: {protect: 1, mirror: 1},
-        isNonstandard: "Past",
         effect: {
             
             onHit(source, target, move) {
@@ -13350,7 +13354,28 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		target: "any",
 		type: "Flying",
 		contestType: "Cool",
-	},
+    },
+    peekaboo: {
+        name: "Peek-a-Boo",
+        shortDesc: "If the target is asleep, This move will decrease all of the target’s stats by 1 stage. This will wake up the target. Fails if the target is not asleep.",
+        desc: "When the target is sleeping, the user manifests itself into the target’s dream, and terrorizes the target inside their mind. Causing the target to wake up feeling weak.",
+        effect: {
+            onHit(target, source, move) {
+                if(target.status !== 'slp') return;
+                target.cureStatus();
+                this.boost({atk: -1, def: -1, spa: -1, spd: -1, spe: -1}, target, source, move);
+            },
+        },
+        pp: 30,
+        category: "Status",
+        target: "normal",
+        priority: 0,
+        accuracy: true,
+        basePower: 0,
+        flags: {status: 1},
+        type: "Ghost",
+        contestType: "Cool",
+    },
 	perishsong: {
 		num: 195,
 		accuracy: true,
@@ -15634,7 +15659,29 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Beautiful",
-	},
+    },
+    roundhouse: {
+        num: -101,
+        accuracy: 100,
+        basePower: 75,
+        category: "Physical",
+        desc: "",
+        shortDesc: "",
+        name: "Roundhouse",
+        pp: 15,
+        priority: 0,
+        flags: {protect: 1, mirror: 1, contact: 1},
+        effect: {
+            onHit(target, source, move) {
+                if(target.moveLastTurnResult == null) { //assuming they were flinched.
+                    this.modifyDamage(0x96, source, target, move);
+                }
+            }
+        },
+        type: "Fighting",
+        target: "normal",
+        
+    },
 	sacredfire: {
 		num: 221,
 		accuracy: 95,
@@ -18761,7 +18808,35 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Tough",
-	},
+    },
+    sweetguard: {
+        num: 256,
+        accuracy: true,
+        basePower: 0,
+        category: "Status",
+        desc: "",
+        shortDesc: "",
+        name: "Sweet Guard",
+        pp: 10,
+        priority: 0,
+        flags: {snatch: 1},
+        target: 'self',
+        effect: {
+            onHit(target) {
+                if (target.hp <= target.maxhp / 2 || target.boosts.def >= 6 || target.boosts.spd >= 6 || target.maxhp === 1) { // Shedinja clause
+                    return false;
+                }
+                this.directDamage(target.maxhp / 2);
+                this.boost({def: 12, spd: 12}, target);
+            }
+        },
+        secondary: {
+            chance: 30,
+            volatileStatus: "flinch"
+        },
+        type: "Psychic",
+    },
+
 	sweetkiss: {
 		num: 186,
 		accuracy: 75,

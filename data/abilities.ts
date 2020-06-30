@@ -397,7 +397,20 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Clear Body",
 		rating: 2,
 		num: 29,
-	},
+    },
+    cloakofnightmares: {
+        shortDesc: "If a pokemon makes Contact with Ghosunny, Their Attacks is dropped by 1 stage.",
+        desc: "When a pokemon makes contact with Ghosunny, they see a nightmare, causing them to shake in fear.",
+        onDamagingHit(damage, target, source, move) {
+            if(move.flags['contact']) {
+                this.add('-ability', target, 'Cloak of Nightmares');
+                this.boost({atk: -1}, source, target, null, true);
+            }
+        },
+        name: "Cloak of Nightmares",
+        rating: 10,
+        num: -100
+    },
 	cloudnine: {
 		shortDesc: "While this Pokemon is active, the effects of weather conditions are disabled.",
 		onStart(pokemon) {
@@ -1829,8 +1842,9 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
     laststand: {
         desc: "When The user has 50% HP or less, all slashing or sword moves will always result in a critical hit.",
         shortDesc: "When at 50% HP or less, all slashing or sword moves will have a 100% chance of a critical hit.",
-        onModifyCritRatio(critRatio, source, target) {
-            if(source.hp <= Math.floor(Math.round(source.baseMaxhp / 2)) && source.moveUsed(this.activeMove?.flags['slash'])) return 5;
+        onTryMove(source, target, move) {
+            if(source.hp <= Math.floor(Math.round(source.maxhp)) && move.flags['slash']) return move.willCrit = true;
+            return false;
         },
         name: "Last Stand",
         rating: 0.5,
