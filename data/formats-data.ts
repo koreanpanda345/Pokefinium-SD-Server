@@ -5802,6 +5802,11 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
             isNonstandard: "Custom",
             tier: "CAP"
     },
+    veneon: {
+            isNonstandard: "Custom",
+            tier: "CAP"
+    },
 }; 
+         
          
         
