@@ -80388,6 +80388,10 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
     gorouchu: {
         learnset: {}
     },
+    veneon: {
+        learnset: {}
+    },
 };
+        
         
         
