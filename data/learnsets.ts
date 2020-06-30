@@ -80385,5 +80385,9 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
     rickastley: {
         learnset: {}
     },
+    gorouchu: {
+        learnset: {}
+    },
 };
+        
         
