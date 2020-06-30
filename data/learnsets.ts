@@ -80459,20 +80459,4 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
 			{generation: 5, level: 47, moves: ["darkpulse", "flamethrower", "hyperbeam", "icebeam"]},
 		],
 	},
-<<<<<<< HEAD
-    rickastley: {
-        learnset: {}
-    },
-    gorouchu: {
-        learnset: {}
-    },
-    veneon: {
-        learnset: {}
-    },
 };
-        
-        
-        
-=======
-};
->>>>>>> c667f756186a63195569dc7a7f2e75b829ebc821

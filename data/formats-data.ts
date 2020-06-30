@@ -5822,23 +5822,4 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
-<<<<<<< HEAD
-    rickastley: {
-            isNonStandard: "Cap",
-            tier: "CAP"
-    },
-    gorouchu: {
-            isNonstandard: "Custom",
-            tier: "CAP"
-    },
-    veneon: {
-            isNonstandard: "Custom",
-            tier: "CAP"
-    },
-}; 
-         
-         
-        
-=======
 };
->>>>>>> c667f756186a63195569dc7a7f2e75b829ebc821
