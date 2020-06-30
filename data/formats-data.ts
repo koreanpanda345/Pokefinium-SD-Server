@@ -5798,5 +5798,10 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
             isNonStandard: "Cap",
             tier: "CAP"
     },
+    gorouchu: {
+            isNonstandard: "Custom",
+            tier: "CAP"
+    },
 }; 
+         
         
