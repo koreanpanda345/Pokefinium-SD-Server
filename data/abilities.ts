@@ -1450,7 +1450,20 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Heavy Metal",
 		rating: 0,
 		num: 134,
-	},
+  },
+  hirudinea: {
+    desc: "When this pokemon uses any kind of draining type moves, that move's power is increased by 1.2x, and the user recovers an additionial 20% hp back.",
+    shortDesc: "Draining moves power increases by 1.2x, and recovers an additional 20% hp",
+    onBasePower(basePower, pokemon, target, move) {
+      if(move.drain) {
+        pokemon.heal(pokemon.baseMaxhp / 5);
+        return this.chainModify([0x1333, 0x1000]);
+      }
+    },
+    name: "Hirudinea",
+    rating: 0,
+    num: 134
+  },
 	honeygather: {
 		shortDesc: "No competitive use.",
 		name: "Honey Gather",

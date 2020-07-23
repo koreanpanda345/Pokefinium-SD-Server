@@ -5476,7 +5476,33 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Fire",
 		contestType: "Cool",
-	},
+  },
+  flamedrain: {
+    num: 141,
+    accuracy: 100,
+    basePower: 80,
+    category: "Physical",
+    desc: "This move is a Two Turn move, the first turn, the user is getting ready, then the second turn they strike. This move drains the target, and recovers 50% of damage dealt to the target.",
+    shortDesc: "This is a charge attack. The second turn the user drains the target, and recovers 50% of hp, based on the damage dealt to the target.",
+    name: "Flame Drain",
+    pp: 10,
+    type: "Fire",
+    target: "normal",
+    contestType: "Clever",
+    priority: 0,
+    flags: {contact: 1, protect: 1, mirror: 1, heal: 1, charge: 1},
+    onTryHit(attacker, defender, move) {
+      if(attacker.removeVolatile(move.id)) {
+        return;
+      }
+      if(!this.runEvent('ChargeMove', attacker, defender, move)) {
+        return;
+      }
+      attacker.addVolatile('twoturnmove', defender);
+      return null;
+    },
+    drain: [1, 2],
+  },
 	flamewheel: {
 		num: 172,
 		accuracy: 100,
@@ -10211,7 +10237,33 @@ export const BattleMovedex: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Grass",
 		contestType: "Cool",
-	},
+  },
+  leafyburrow: {
+    num: 141,
+    accuracy: 100,
+    basePower: 80,
+    category: "Physical",
+    desc: "This move is a Two Turn move, the first turn, the user is getting ready, then the second turn they strike. This move drains the target, and recovers 50% of damage dealt to the target.",
+    shortDesc: "This is a charge attack. The second turn the user drains the target, and recovers 50% of hp, based on the damage dealt to the target.",
+    name: "Leafy Burrow",
+    pp: 10,
+    type: "Grass",
+    target: "normal",
+    contestType: "Clever",
+    priority: 0,
+    flags: {contact: 1, protect: 1, mirror: 1, heal: 1, charge: 1},
+    onTryHit(attacker, defender, move) {
+      if(attacker.removeVolatile(move.id)) {
+        return;
+      }
+      if(!this.runEvent('ChargeMove', attacker, defender, move)) {
+        return;
+      }
+      attacker.addVolatile('twoturnmove', defender);
+      return null;
+    },
+    drain: [1, 2],
+  },
 	leechlife: {
 		num: 141,
 		accuracy: 100,
