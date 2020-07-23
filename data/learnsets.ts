@@ -80462,5 +80462,9 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
     veneon: {
         learnset: {'sludgebomb': ['8L1'], 'toxic': ['8L1'], 'sludgewave': ['8L1'], 'toxicspikes': ['8L1'], 'crosspoison': ['8L1']}
     },
+    veneon: {
+        learnset: {'sludgebomb': ['8L1'], 'toxic': ['8L1'], 'sludgewave': ['8L1'], 'toxicspikes': ['8L1'], 'crosspoison': ['8L1']}
+    },
 };
+        
         
