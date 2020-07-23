@@ -16878,4 +16878,18 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		gen: 5,
 	},
+    veneon: {
+        num: -5012,
+        name: "veneon",
+        types: ['Poison'],
+        genderRatio: {'M': 0.5, 'F': 0.5},
+        baseStats: {'hp': 80, 'atk': 75, 'def': 85, 'spa': 100, 'spd': 85, 'spe': 100},
+        abilities: {'0': 'Poison Point', 'H': 'Corrosion'},
+        heightm: 0.5,
+        weightkg: 30,
+        color: "Orange",
+        evos: [''],
+        eggGroups: ['Field']
+    },
 };
+        
