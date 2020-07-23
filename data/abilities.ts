@@ -2081,7 +2081,7 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
       if(typeof accuracy !== 'number') return;
       this.debug('Magic Orb - decreasing accuracy');
       return accuracy * 0.8;
-    }
+    },
     name: "Magic Orb",
     rating: 0,
     num: 81
