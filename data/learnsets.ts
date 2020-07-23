@@ -106,7 +106,7 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
     },
     gorouchu: {
         learnset: {
-            roundhouse: ["8L1", "7L1"],
+            roundhouse: ["8L1"],
             highjumpkick: ["8L1"],
             bulkup: ["8L1"],
             thunderpuch: ["8L1"],

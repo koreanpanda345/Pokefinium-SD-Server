@@ -365,7 +365,20 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Cheek Pouch",
 		rating: 1.5,
 		num: 167,
-	},
+  },
+  cheeryaura: {
+    desc: "Wild Pokemon appear more often, this pokemon has a 10% chance to infatuate the attacking pokemon when any contact is made.",
+    shortDesc: "When this pokemon is hit by a contacting move, there is a 10% chance to infatuate the attacking pokemon.",
+    onDamagingHit(damage, target, source, move){
+      if(move.flags['Contact']) {
+        if((this.randomChance(1, 10)))
+        source.addVolatile('attract', this.effectData.target);
+      }
+    },
+    name: "Cheery Aura",
+    rating: 1.5,
+    num: 167
+  },
 	chlorophyll: {
 		desc: "If Sunny Day is active and this Pokemon is not holding Utility Umbrella, this Pokemon's Speed is doubled.",
 		shortDesc: "If Sunny Day is active, this Pokemon's Speed is doubled.",
@@ -2060,7 +2073,19 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Magician",
 		rating: 1.5,
 		num: 170,
-	},
+  },
+  magicorb: {
+    shortDesc: "",
+    desc: "",
+    onModifyAccuracy(accuracy) {
+      if(typeof accuracy !== 'number') return;
+      this.debug('Magic Orb - decreasing accuracy');
+      return accuracy * 0.8;
+    }
+    name: "Magic Orb",
+    rating: 0,
+    num: 81
+  },
 	magmaarmor: {
 		shortDesc: "This Pokemon cannot be frozen. Gaining this Ability while frozen cures it.",
 		onUpdate(pokemon) {
@@ -2969,7 +2994,17 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Protean",
 		rating: 4.5,
 		num: 168,
-	},
+  },
+  psychicaura: {
+    shortDesc: "On switch-in, this pokemon summons Psychic Aura.",
+    desc: "",
+    onStart(source) {
+      this.field.setTerrain('psychicterrain');
+    },
+    name: "Psychic Aura",
+    rating: 0,
+    num: 227
+  },
 	psychicsurge: {
 		shortDesc: "On switch-in, this Pokemon summons Psychic Terrain.",
 		onStart(source) {
@@ -3566,7 +3601,19 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Shields Down",
 		rating: 3.5,
 		num: 197,
-	},
+  },
+  shockresponse: {
+    shortDesc: "If the user is hit by a contacting damaging move, the target loses 1/8 of their max hp.",
+    desc: "When attacked this pokemon will respond by flailing its wings and legs for a short period.",
+    onDamagingHitOrder: 1,
+    onDamagingHit(damage, target, source, move) {
+      if(move.flags['contact'])
+        this.damage(source.baseMaxhp / 8, source, target);
+    },
+    name: "Shock Response",
+    rating: 0,
+    num: 100,
+  },
 	simple: {
 		desc: "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead. This Ability does not affect stat stage increases received from Z-Power effects that happen before a Z-Move is used.",
 		shortDesc: "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead.",
@@ -3634,7 +3681,18 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Slush Rush",
 		rating: 2.5,
 		num: 202,
-	},
+  },
+  smallwinged: {
+    shortDesc: "If the user's hp is under 25% of thier max hp, then the user is grounded",
+    onBeforeTurn(pokemon) {
+      if(pokemon.hp <= (pokemon.maxhp / 4)){
+        return pokemon.isGrounded(true);
+      }
+    },
+    name: "Small Winged",
+    rating: 0,
+    num: 97
+  },
 	sniper: {
 		shortDesc: "If this Pokemon strikes with a critical hit, the damage is multiplied by 1.5.",
 		onModifyDamage(damage, source, target, move) {
@@ -4155,7 +4213,17 @@ export const BattleAbilities: {[abilityid: string]: AbilityData} = {
 		name: "Teravolt",
 		rating: 3.5,
 		num: 164,
-	},
+  },
+  theorizer: {
+    shortDesc: "On switch-in, this Pokemon's Special Attack is rasied by 1 stage.",
+    desc: "The Pokemon will come up with explanations to the unknown. The Pokemon gets a boost in its Spatk. Stat.",
+    onStart(pokemon) {
+      this.boost({spa: 1}, pokemon);
+    },
+    name: "Theorizer",
+    rating: 0,
+    num: 164
+  },
 	thickfat: {
 		desc: "If a Pokemon uses a Fire- or Ice-type attack against this Pokemon, that Pokemon's attacking stat is halved when calculating the damage to this Pokemon.",
 		shortDesc: "Fire/Ice-type moves against this Pokemon deal damage with a halved attacking stat.",
