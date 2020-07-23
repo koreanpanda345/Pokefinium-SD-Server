@@ -158,7 +158,6 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		disablenodestatic?: boolean,
 	}) {
         super();
-        config.bindaddress = '192.168.1.8';
 		if (!config.bindaddress) config.bindaddress = '0.0.0.0';
 
 		this.isTrustedProxyIp = config.proxyip ? IPTools.checker(config.proxyip) : () => false;
