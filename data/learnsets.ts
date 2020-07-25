@@ -80498,6 +80498,10 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
     rotomsaucer: {
         learnset: {'psychic': ['8L1'], 'reflect': ['8L1'], 'lightscreen': ['8L1'], 'thunder': ['8L1'], 'thunderbolt': ['8L1'], 'defog': ['8L1'], 'voltswitch': ['8L1'], 'psychicterrain': ['8L1'], 'teleport': ['8L1']}
     },
+    purrloin-pokefinium: {
+        learnset: {'darkpulse': ['8L1'], 'seedbomb': ['8L1'], 'pursuit': ['8L1'], 'tric': ['8L1'], 'iceleathality': ['8L1'], 'darkestlariat': ['8L1'], 'toxic': ['8L1'], 'fakeout': ['8L1'], 'knockoff': ['8L1'], 'uturn': ['8L1'], 'hail': ['8L1'], 'nastyplot': ['8L1'], 'iciclecrash': ['8L1'], 'taunt': ['8L1'], 'shadowball': ['8L1'], 'protect': ['8L1'], 'substitute': ['8L1'], 'thunderwave': ['8L1'], 'batonpass': ['8L1']}
+    },
 };
+        
         
         
