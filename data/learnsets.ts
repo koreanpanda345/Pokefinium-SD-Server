@@ -16,7 +16,9 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
             bravebird: ["8L1"],
             roost: ["8L1"],
             swordsdance: ["8L1"],
-            pluck: ["8L1"]
+            pluck: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"]
         }
     },
     magpocket: {
@@ -25,7 +27,9 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
             bravebird: ["8L1"],
             roost: ["8L1"],
             swordsdance: ["8L1"],
-            pluck: ["8L1"]
+            pluck: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"]
         },
 	},
     mantomoto: {
@@ -101,7 +105,7 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
             mysticalfire: ["8L1"],
             psychic: ["8L1"],
             psybeam: ["8L1"],
-
+            hiddenpower: ["8L1"]
         },
     },
     gorouchu: {
@@ -109,23 +113,34 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
             roundhouse: ["8L1"],
             highjumpkick: ["8L1"],
             bulkup: ["8L1"],
-            thunderpuch: ["8L1"],
+            thunderpunch: ["8L1"],
             mefirst: ["8L1"],
             voltswitch: ["8L1"],
             fakeout: ["8L1"],
             irontail: ["8L1"],
-            bodyslam: ["8L1"]
+            bodyslam: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"],
         }
     },
     loliama: {
         learnset: {
-            sweetguard: ["8L1"]
+            sweetguard: ["8L1"],
+            psychic: ["8L1"],
+            dazzlinggleam: ["8L1"],
+            protect: ["8L1"]
         }
     },
     cottonama: {
         learnset: {
-            sweetguard: ["8L1"]
-        }
+            sweetguard: ["8L1"],
+            psychic: ["8L1"],
+            dazzlinggleam: ["8L1"],
+            protect: ["8L1"],
+            playrough: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"],
+          }
     },
     missingno: {
 		learnset: {
