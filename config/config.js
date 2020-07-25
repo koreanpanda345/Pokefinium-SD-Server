@@ -168,8 +168,8 @@ Y929lRybWEiKUr+4Yw2O1W0CAwEAAQ==
  *   Don't change this setting - there aren't any other options right now
  */
 exports.routes = {
-	root: "pokemonshowdown.com",
-	client: "play.pokemonshowdown.com",
+	root: "igl-pokefinium.herokuapp.com",
+	client: "pokefinium.herkouapp.com",
 	dex: "dex.pokemonshowdown.com",
 	replays: "replay.pokemonshowdown.com",
 };
