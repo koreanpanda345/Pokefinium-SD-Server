@@ -130,7 +130,7 @@ export class Field {
 		if (!source && this.battle.event && this.battle.event.target) source = this.battle.event.target;
 		if (source === 'debug') source = this.battle.sides[0].active[0];
 		if (!source) throw new Error(`setting terrain without a source`);
-
+    if(this.terrain === 'psychicaura')
 		if (this.terrain === status.id) return false;
 		const prevTerrain = this.terrain;
 		const prevTerrainData = this.terrainData;

@@ -1,5 +1,50 @@
+<<<<<<< HEAD
 export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	bulbasaur: {
+=======
+export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
+    magpie: {
+        isNonstandard: "Custom",
+        tier: "CAP LC"
+    },
+    snagpie: {
+        isNonstandard: "Custom",
+        tier: "CAP NFE"
+    },
+    magpocket: {
+        isNonstandard: "Custom",
+        tier: "CAP"
+    },
+    orycto: {
+        isNonstandard: "Custom",
+        tier: "CAP LC"
+    },
+    oryculus: {
+        isNonstandard: "Custom",
+        tier: "CAP NFE"
+    },
+    cunilagus: {
+        isNonstandard: "Custom",
+        tier: "CAP",
+    },
+    gorouchu: {
+        isNonstandard: "Custom",
+        tier: "CAP"
+    },
+    mantomoto: {
+        isNonstandard: "Custom",
+        tier: "CAP"
+    },
+    loliama: {
+        isNonstandard: "Custom",
+        tier: "CAP LC"
+    },
+    cottonama: {
+        isNonstandard: "Custom",
+        tier: "CAP"
+    },
+    bulbasaur: {
+>>>>>>> b8c323f9bdc4a102c913b8ba98a2bfc890bfe50b
 		tier: "LC",
 	},
 	ivysaur: {
@@ -6208,4 +6253,14 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
-};
+    veneon: {
+            isNonstandard: "Custom",
+            tier: "CAP"
+    },
+    rotomsaucer: {
+            isNonstandard: "Custom",
+            tier: "CAP"
+    },
+}; 
+         
+        

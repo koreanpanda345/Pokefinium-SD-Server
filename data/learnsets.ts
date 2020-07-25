@@ -1,7 +1,153 @@
 /* eslint-disable max-len */
 
+<<<<<<< HEAD
 export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	missingno: {
+=======
+export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
+    magpie: {
+        learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"]
+        }
+    },
+    snagpie: {
+        learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"]
+        }
+    },
+    magpocket: {
+		learnset: {
+            darkestlariat: ["8L1"],
+            bravebird: ["8L1"],
+            roost: ["8L1"],
+            swordsdance: ["8L1"],
+            pluck: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"]
+        },
+	},
+    mantomoto: {
+        learnset: {
+            brickbreak: ["8L1"],
+            crosspoison: ["8L1"],
+            fakeout: ["8L1"],
+            honeclaws: ["8L1"],
+            leafblade: ["8L1"],
+            nightslash: ["8L1"],
+            leechlife: ["8L1"],
+            psychocut: ["8L1"],
+            sacredsword: ["8L1"],
+            secretsword: ["8L1"],
+            taunt: ["8L1"],
+            uturn: ["8L1"],
+            xscissor: ["8L1"],
+            breakingswipe: ["8L1"],
+            crossslash: ["8L1"],
+            slash: ["8L1"]
+        }
+    },
+    orycto: {
+        learnset: {
+            courtchange: ["8L1"],
+            fireblast: ["8L1"],
+            flamethrower: ["8L1"],
+            darkpulse: ["8L1"],
+            toxic: ["8L1"],
+            thunderwave: ["8L1"],
+            calmmind: ["8L1"],
+            focusblast: ["8L1"],
+            reflect: ["8L1"],
+            lightscreen: ["8L1"],
+            scald: ["8L1"],
+            mysticalfire: ["8L1"],
+            psychic: ["8L1"],
+            psybeam: ["8L1"],
+        },
+    },
+    oryculus: {
+        learnset: {
+            courtchange: ["8L1"],
+            fireblast: ["8L1"],
+            flamethrower: ["8L1"],
+            darkpulse: ["8L1"],
+            toxic: ["8L1"],
+            thunderwave: ["8L1"],
+            calmmind: ["8L1"],
+            focusblast: ["8L1"],
+            reflect: ["8L1"],
+            lightscreen: ["8L1"],
+            scald: ["8L1"],
+            mysticalfire: ["8L1"],
+            psychic: ["8L1"],
+            psybeam: ["8L1"],
+        },
+    },
+    cunilagus: {
+        learnset: {
+            houdinisflames: ["8L1", "7L1"],
+            courtchange: ["8L1"],
+            fireblast: ["8L1"],
+            flamethrower: ["8L1"],
+            darkpulse: ["8L1"],
+            toxic: ["8L1"],
+            thunderwave: ["8L1"],
+            calmmind: ["8L1"],
+            focusblast: ["8L1"],
+            reflect: ["8L1"],
+            lightscreen: ["8L1"],
+            scald: ["8L1"],
+            mysticalfire: ["8L1"],
+            psychic: ["8L1"],
+            psybeam: ["8L1"],
+            hiddenpower: ["8L1"]
+        },
+    },
+    gorouchu: {
+        learnset: {
+            roundhouse: ["8L1"],
+            highjumpkick: ["8L1"],
+            bulkup: ["8L1"],
+            thunderpunch: ["8L1"],
+            mefirst: ["8L1"],
+            voltswitch: ["8L1"],
+            fakeout: ["8L1"],
+            irontail: ["8L1"],
+            bodyslam: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"],
+        }
+    },
+    loliama: {
+        learnset: {
+            sweetguard: ["8L1"],
+            psychic: ["8L1"],
+            dazzlinggleam: ["8L1"],
+            protect: ["8L1"]
+        }
+    },
+    cottonama: {
+        learnset: {
+            sweetguard: ["8L1"],
+            psychic: ["8L1"],
+            dazzlinggleam: ["8L1"],
+            protect: ["8L1"],
+            playrough: ["8L1"],
+            toxic: ["8L1"],
+            hiddenpower: ["8L1"],
+          }
+    },
+    missingno: {
+>>>>>>> b8c323f9bdc4a102c913b8ba98a2bfc890bfe50b
 		learnset: {
 			blizzard: ["3L1"],
 			bubblebeam: ["3L1"],
@@ -80351,4 +80497,12 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			{generation: 5, level: 47, moves: ["darkpulse", "flamethrower", "hyperbeam", "icebeam"]},
 		],
 	},
+    veneon: {
+        learnset: {"sludgebomb": ['8L1'], "toxic": ['8L1'], "sludgewave": ['8L1'], "toxicspikes": ['8L1'], "crosspoison": ['8L1']}
+    },
+    rotomsaucer: {
+        learnset: {'psychic': ['8L1'], 'reflect': ['8L1'], 'lightscreen': ['8L1'], 'thunder': ['8L1'], 'thunderbolt': ['8L1'], 'defog': ['8L1'], 'voltswitch': ['8L1'], 'psychicterrain': ['8L1'], 'teleport': ['8L1']}
+    },
 };
+        
+        
