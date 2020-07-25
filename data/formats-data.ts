@@ -5826,5 +5826,10 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
             isNonstandard: "Custom",
             tier: "CAP"
     },
+    rotom-saucer: {
+            isNonstandard: "Custom",
+            tier: "CAP"
+    },
 }; 
+         
         
