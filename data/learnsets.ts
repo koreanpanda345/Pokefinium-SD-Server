@@ -80501,7 +80501,11 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
     purrloinpokefinium: {
         learnset: {'darkpulse': ['8L1'], 'seedbomb': ['8L1'], 'pursuit': ['8L1'], 'tric': ['8L1'], 'iceleathality': ['8L1'], 'darkestlariat': ['8L1'], 'toxic': ['8L1'], 'fakeout': ['8L1'], 'knockoff': ['8L1'], 'uturn': ['8L1'], 'hail': ['8L1'], 'nastyplot': ['8L1'], 'iciclecrash': ['8L1'], 'taunt': ['8L1'], 'shadowball': ['8L1'], 'protect': ['8L1'], 'substitute': ['8L1'], 'thunderwave': ['8L1'], 'batonpass': ['8L1']}
     },
+    liepardpokefinium: {
+        learnset: {'darkpulse': ['8L1'], 'seedbomb': ['8L1'], 'pursuit': ['8L1'], 'tric': ['8L1'], 'icelethality': ['8L1'], 'darkestlariat': ['8L1'], 'toxic': ['8L1'], 'fakeout': ['8L1'], 'knockoff': ['8L1'], 'uturn': ['8L1'], 'hail': ['8L1'], 'nastyplot': ['8L1'], 'iciclecrash': ['8L1'], 'taunt': ['8L1'], 'shadowball': ['8L1'], 'protect': ['8L1'], 'substitute': ['8L1'], 'thunderwave': ['8L1'], 'batonpass': ['8L1']}
+    },
 };
+        
         
         
         
