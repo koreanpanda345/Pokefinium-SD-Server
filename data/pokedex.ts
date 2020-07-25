@@ -16878,7 +16878,21 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         evos: ['Liepard-Pokefinium'],
         eggGroups: ['Amorphous']
     },
+    liepardpokefinium: {
+        num: -5012,
+        name: "Liepard-Pokefinium",
+        types: ['Ice', 'Dark'],
+        genderRatio: {'M': 0.5, 'F': 0.5},
+        baseStats: {'hp': 75, 'atk': 80, 'def': 60, 'spa': 95, 'spd': 60, 'spe': 107},
+        abilities: {'0': 'Limber', '1': 'Overcoat', 'H': 'Quick Feet'},
+        heightm: 0.3,
+        weightkg: 0.3,
+        color: "white",
+        evos: [''],
+        eggGroups: ['Field']
+    },
 };
+        
         
         
         
