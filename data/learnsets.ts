@@ -1,10 +1,6 @@
 /* eslint-disable max-len */
 
-<<<<<<< HEAD
 export const Learnsets: {[speciesid: string]: LearnsetData} = {
-	missingno: {
-=======
-export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
     magpie: {
         learnset: {
             darkestlariat: ["8L1"],
@@ -147,7 +143,6 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
           }
     },
     missingno: {
->>>>>>> b8c323f9bdc4a102c913b8ba98a2bfc890bfe50b
 		learnset: {
 			blizzard: ["3L1"],
 			bubblebeam: ["3L1"],

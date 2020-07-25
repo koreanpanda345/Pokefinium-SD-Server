@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 export const FormatsData: {[k: string]: SpeciesFormatsData} = {
-	bulbasaur: {
-=======
-export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
     magpie: {
         isNonstandard: "Custom",
         tier: "CAP LC"
@@ -44,7 +40,6 @@ export const BattleFormatsData: {[k: string]: SpeciesFormatsData} = {
         tier: "CAP"
     },
     bulbasaur: {
->>>>>>> b8c323f9bdc4a102c913b8ba98a2bfc890bfe50b
 		tier: "LC",
 	},
 	ivysaur: {

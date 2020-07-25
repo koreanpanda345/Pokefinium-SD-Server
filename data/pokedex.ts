@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 export const Pokedex: {[speciesid: string]: SpeciesData} = {
-	bulbasaur: {
-=======
-export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
     maskpie: {
         num: -5002,
         name: "Maskpie",
@@ -125,7 +121,6 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         eggGroups: ["Candy"],
     },
     bulbasaur: {
->>>>>>> b8c323f9bdc4a102c913b8ba98a2bfc890bfe50b
 		num: 1,
 		name: "Bulbasaur",
 		types: ["Grass", "Poison"],
