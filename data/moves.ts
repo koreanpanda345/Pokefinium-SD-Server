@@ -9508,7 +9508,39 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Ice",
 		contestType: "Beautiful",
-	},
+  },
+  icelethality: {
+    name: "Ice Letality",
+    num: 420,
+    accuracy: 90,
+    basePower: 120,
+    category: "Special",
+    desc: "In hail, using this move does not require a turn to recharge. If no hail is present, the user must wait a turn to recharge.",
+    shortDesc: "Charges turn 1. Hits turn 2. No charge in hail.",
+    pp: 10,
+    priority: 0,
+    flags: {charge: 1, protect: 1, mirror: 1},
+    onTryMove(attacker, defender, move) {
+      if(attacker.removeVolatile(move.id)){
+        return;
+      }
+      this.add('-prepare', attacker, move.name, defender);
+      if(['hail'].includes(attacker.effectiveWeather())){
+        this.attrLastMove('[still]');
+        this.addMove('-anim', attacker, move.name, defender);
+        return;
+      }
+      if(this.runEvent('ChargeMove', attacker, defender, move)){
+        return;
+      }
+      attacker.addVolatile('twopturnmove', defender);
+      return null;
+    },
+    secondary: null,
+    target: "normal",
+    type: "Ice",
+    contestType: "Cool",
+  },
 	iceshard: {
 		num: 420,
 		accuracy: 100,

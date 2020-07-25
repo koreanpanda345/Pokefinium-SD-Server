@@ -6256,7 +6256,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
             isNonstandard: "Custom",
             tier: "CAP"
     },
-    purrloin-pokefinium: {
+    purrloinpokefinium: {
             isNonstandard: "Custom",
             tier: "CAP"
     },
