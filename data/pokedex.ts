@@ -16891,5 +16891,19 @@ export const BattlePokedex: {[speciesid: string]: SpeciesData} = {
         evos: [''],
         eggGroups: ['Field']
     },
+    rotomsaucer: {
+        num: -5012,
+        name: "Rotom-Saucer",
+        types: ['Electric', 'Psychic'],
+        genderRatio: {'M': 0.5, 'F': 0.5},
+        baseStats: {'hp': 50, 'atk': 65, 'def': 107, 'spa': 105, 'spd': 107, 'spe': 86},
+        abilities: {'0': 'Levitate'},
+        heightm: 0.3,
+        weightkg: 0.3,
+        color: "Red",
+        evos: [''],
+        eggGroups: ['Amorphous']
+    },
 };
+        
         
