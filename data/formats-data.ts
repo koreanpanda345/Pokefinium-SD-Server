@@ -6260,7 +6260,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
             isNonstandard: "Custom",
             tier: "CAP"
     },
+    liepardpokefinium: {
+            isNonstandard: "Custom",
+            tier: "CAP"
+    },
 }; 
+         
          
          
         
