@@ -16865,6 +16865,20 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         evos: [''],
         eggGroups: ['Amorphous']
     },
+    purrloinpokefinium: {
+        num: -5012,
+        name: "Purrloin-Pokefinium",
+        types: ['Electric', 'Psychic'],
+        genderRatio: {'M': 0.5, 'F': 0.5},
+        baseStats: {'hp': 50, 'atk': 65, 'def': 107, 'spa': 105, 'spd': 107, 'spe': 86},
+        abilities: {'0': 'Limber', '1': 'Overcoat', 'H': 'Unnerve'},
+        heightm: 0.3,
+        weightkg: 0.3,
+        color: "Red",
+        evos: [''],
+        eggGroups: ['Amorphous']
+    },
 };
+        
         
         
