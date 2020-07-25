@@ -80477,7 +80477,7 @@ export const BattleLearnsets: {[speciesid: string]: LearnsetData} = {
     veneon: {
         learnset: {"sludgebomb": ['8L1'], "toxic": ['8L1'], "sludgewave": ['8L1'], "toxicspikes": ['8L1'], "crosspoison": ['8L1']}
     },
-    rotom-saucer: {
+    rotomsaucer: {
         learnset: {'psychic': ['8L1'], 'reflect': ['8L1'], 'lightscreen': ['8L1'], 'thunder': ['8L1'], 'thunderbolt': ['8L1'], 'defog': ['8L1'], 'voltswitch': ['8L1'], 'psychicterrain': ['8L1'], 'teleport': ['8L1']}
     },
 };
