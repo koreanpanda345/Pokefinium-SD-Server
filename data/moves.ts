@@ -9524,10 +9524,10 @@ export const Moves: {[moveid: string]: MoveData} = {
       if(attacker.removeVolatile(move.id)){
         return;
       }
-      this.add('-prepare', attacker, move.name, defender);
+      this.add('-prepare', attacker, 'Solar Beam', defender);
       if(['hail'].includes(attacker.effectiveWeather())){
         this.attrLastMove('[still]');
-        this.addMove('-anim', attacker, move.name, defender);
+        this.addMove('-anim', attacker, 'Solar Beam', defender);
         return;
       }
       if(this.runEvent('ChargeMove', attacker, defender, move)){
