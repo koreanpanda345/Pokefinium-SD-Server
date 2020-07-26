@@ -9533,7 +9533,7 @@ export const Moves: {[moveid: string]: MoveData} = {
       if(this.runEvent('ChargeMove', attacker, defender, move)){
         return;
       }
-      attacker.addVolatile('twopturnmove', defender);
+      attacker.addVolatile('twoturnmove', defender);
       return null;
     },
     secondary: null,
