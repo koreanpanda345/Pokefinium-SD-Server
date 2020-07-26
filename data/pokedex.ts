@@ -16868,7 +16868,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
     purrloinpokefinium: {
         num: -5013,
         name: "Purrloin-Pokefinium",
-        types: ['Electric', 'Psychic'],
+        types: ['Ice', 'Dark'],
         genderRatio: {'M': 0.5, 'F': 0.5},
         baseStats: {'hp': 50, 'atk': 40, 'def': 30, 'spa': 60, 'spd': 30, 'spe': 70},
         abilities: {'0': 'Limber', '1': 'Overcoat', 'H': 'Unnerve'},

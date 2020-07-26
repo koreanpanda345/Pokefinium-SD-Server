@@ -9510,7 +9510,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Beautiful",
   },
   icelethality: {
-    name: "Ice Letality",
+    name: "Ice Lethality",
     num: 420,
     accuracy: 90,
     basePower: 120,
