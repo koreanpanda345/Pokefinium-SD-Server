@@ -2824,6 +2824,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 88.4,
 		color: "Brown",
 		eggGroups: ["Field"],
+		otherFormes: ["Tauros-Pokefinium"],
+		formeOrder: ["Tauros", "Tauros-Pokefinium"]
 	},
 	magikarp: {
 		num: 129,
@@ -9046,6 +9048,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Purple",
 		evos: ["Liepard"],
 		eggGroups: ["Field"],
+		otherFormes: ["Purrloin-Pokefinium"],
+		formeOrder: ["Purrloin", "Purrloin-Pokefinium"]
 	},
 	liepard: {
 		num: 510,
@@ -9059,6 +9063,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Purrloin",
 		evoLevel: 20,
 		eggGroups: ["Field"],
+		otherFormes: ["Liepard-Pokefinium"],
+		formeOrder: ["Liepard", "Liepard-Pokefinium"]
 	},
 	pansage: {
 		num: 511,
@@ -16879,7 +16885,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         eggGroups: ['Amorphous']
     },
     liepardpokefinium: {
-        num: -5012,
+        num: -5014,
         name: "Liepard-Pokefinium",
         types: ['Ice', 'Dark'],
         genderRatio: {'M': 0.5, 'F': 0.5},
@@ -16891,8 +16897,34 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         evos: [''],
         eggGroups: ['Field']
     },
+    mirroblin: {
+      num: -5015,
+      name: "Mirroblin",
+      types: ["Ghost", "Psychic"],
+      genderRatio: {M: 0.5, F: 0.5},
+      baseStats: {hp: 65, atk: 44, def: 60, spa: 133, spd: 100, spe: 88},
+      abilities: {'0': "Pickpocket", '1': "Frisk", "H": "Magic Bounce"},
+      heightm: 0.2,
+      weightkg: 10,
+      evos: [''],
+      eggGroups: ["Field"],
+	 },
+	 taurospokefinium: {
+		 num: -5016,
+		 name: "Tauros-Pokefinium",
+		 types: ["Ground", "Water"],
+		 genderRatio: {M: 0.5, F: 0.5},
+		 baseStats: {hp: 75, atk: 100, def: 95, spa: 40, spd: 70, spe: 110},
+		 abilities: {"0": "Intimidate", "1": "Sheer Force", H: "Bull Tactics"},
+		 heightm: 1.4,
+		 weightkg: 88.4,
+		 color: "Brown",
+		 evos: [''],
+		 eggGroups: ["Fiedl"]
+	 },
+
 };
-        
-        
-        
-        
+
+
+
+

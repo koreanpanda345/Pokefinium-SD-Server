@@ -356,6 +356,49 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 171,
 	},
+	bulltactics: {
+		desc: "",
+		shortDesc: "Only able to use the first move chosen in battle, can't use other moves while in. But The User gains a 1.5x boost in Def.",
+		onStart(pokemon) {
+			pokemon.abilityData.choiceLock = "";
+		},
+		onBeforeMove(pokemon, target, move) {
+			if(move.isZOrMaxPowered || move.id === 'struggle') return;
+			if(pokemon.abilityData.choiceLock && pokemon.abilityData.choiceLock !== move.id) {
+				this.addMove('move', pokemon, move.name);
+				this.attrLastMove('[still]');
+				this.debug("Disabled by Bull Tactics");
+				this.add('-fail', pokemon);
+				return false;
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if(pokemon.abilityData.choiceLock || move.isZOrMaxPowered || move.id === 'struggle') return;
+			pokemon.abilityData.choiceLock = move.id;
+		},
+		onModifyDefPriority: 1,
+		onModifyDef(def, pokemon) {
+			if(pokemon.volatiles['dynmax']) return;
+			// PLACEHOLDER
+			this.debug('BullTactics Atk Boost');
+			return this.chainModify(1.5);
+		},
+		onDisableMove(pokemon) {
+			if(!pokemon.abilityData.choiceLock) return;
+			if(pokemon.volatiles['dynmax']) return;
+			for(const moveSlot of pokemon.moveSlots) {
+				if(moveSlot.id !== pokemon.abilityData.choiceLock) {
+					pokemon.disableMove(moveSlot.id, false, this.effectData.sourceEffect);
+				}
+			}
+		},
+		onEnd(pokemon){
+			pokemon.abilityData.choiceLock = "";
+		},
+		name: "Bull Tactics",
+		rating: 4.5,
+		num: 255
+	},
 	cheekpouch: {
 		desc: "If this Pokemon eats a Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect.",
 		shortDesc: "If this Pokemon eats a Berry, it restores 1/3 of its max HP after the Berry's effect.",

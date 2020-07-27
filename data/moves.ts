@@ -1992,6 +1992,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 		maxMove: {basePower: 130},
 		contestType: "Cool",
 	},
+	bullstampede: {
+		num: 399,
+		accuracy: 85,
+		basePower: 110,
+		category: "Physical",
+		desc: "",
+		shortDesc: "",
+		name: "Bull Stampede",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, contact: 1, mirror: 1},
+		secondary: {
+			chance: 20,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Ground",
+		contestType: "Cool",
+	},
 	burningjealousy: {
 		num: 807,
 		accuracy: 100,
@@ -7537,7 +7556,55 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "adjacentFoe",
 		type: "Flying",
 		contestType: "Cool",
-	},
+  },
+  goblinsmirror: {
+    num: 447,
+    accuracy: true,
+    basePower: 0,
+    category: "Status",
+    desc: "",
+    shortDesc: "",
+    name: "Goblins Mirror",
+    pp: 10,
+    priority: 4,
+    flags: {},
+    stallingMove: true,
+    volatileStatus: 'protect',
+    beforeTurnCallback(pokemon) {
+      pokemon.addVolatile('gmirror');
+    },
+    onPrepareHit(pokemon){
+      return !!this.queue.willAct && this.runEvent('StallMove', pokemon);
+    },
+    onTryHit(target, source, move) {
+      if(!source.volatiles['gmirror']) return false;
+      if(source.volatiles['gmirror'].position === null) return false;
+    },
+    effect: {
+      duration: 1,
+      noCopy: true,
+      onStart(tareget, source, move) {
+        this.effectData.position = null;
+        this.effectData.damage = 0;
+      },
+      onRedirectTargetPriority: -1,
+      onRedirectTarget(target, source, source2) {
+        if(source !== this.effectData.target) return;
+        return source.side.foe.active[this.effectData.position];
+      },
+      onDamagingHit(damage, target, source, move) {
+        if(source.side !== target.side && (move.flags['pulse'] || move.flags['sound'])) {
+          this.effectData.position = source.position;
+          this.effectData.damage = damage;
+        }
+      }
+    },
+    secondary: null,
+    target: "scripted",
+    maxMove: {basePower: 75},
+    contestType: "Tought",
+    type: "Ghost"
+  },
 	grassknot: {
 		num: 447,
 		accuracy: 100,
@@ -9091,23 +9158,19 @@ export const Moves: {[moveid: string]: MoveData} = {
     houdinisflames: {
         num: 810,
         accuracy: 90,
-        basePower: 75,
+        basePower: 40,
         category: "Special",
-        desc: "If screens/protect are up, target takes 1/2 damage, and breaks screens/protect. If Prankster is its ability, this move is effected by it, and the user will go first. If the target is a dark type, and the user's ability is Prankster, this move will fail.",
-        shortDesc: "This move will break screens if any are up, but the target will take 1/2 damage it would have recieved. This move is effected by Prankster, and user will go first.",
+        desc: "If screens are up, this move will break them. If Prankster is its ability, this move is effected by it, and the user will go first. If the target is a dark type, and the user's ability is Prankster, this move will fail.",
+        shortDesc: "This move will break screens if any are up. This move is effected by Prankster, and user will go first.",
         name: "Houdini's Flames",
         pp: 15,
         priority: 0,
         flags: {protect: 1, mirror: 1},
         effect: {
-            
             onHit(source, target, move) {
                 if(target.types.includes("Dark") && source.ability.includes("Prankster")){
                     return;
               }
-            else if(target.side.sideConditions){
-                this.modifyDamage(37, source, target, move);
-            }
           }
     },
     onTryHit(target) { 
@@ -15747,8 +15810,8 @@ export const Moves: {[moveid: string]: MoveData} = {
         priority: 0,
         flags: {protect: 1, mirror: 1, contact: 1},
         effect: {
-            onHit(target, source, move) {
-                if(target.moveLastTurnResult == null) { //assuming they were flinched.
+            onHit(target, source, move) {  
+              if(target.moveLastTurnResult === null && target.volatiles['flinch'].duration == 1) { //assuming they were flinched.
                     this.modifyDamage(0x96, source, target, move);
                 }
             }
