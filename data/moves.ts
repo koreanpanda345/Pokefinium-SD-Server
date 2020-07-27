@@ -7571,14 +7571,14 @@ export const Moves: {[moveid: string]: MoveData} = {
     stallingMove: true,
     volatileStatus: 'protect',
     beforeTurnCallback(pokemon) {
-      pokemon.addVolatile('gmirror');
+      pokemon.addVolatile('magiccoat');
     },
     onPrepareHit(pokemon){
       return !!this.queue.willAct && this.runEvent('StallMove', pokemon);
     },
     onTryHit(target, source, move) {
-      if(!source.volatiles['gmirror']) return false;
-      if(source.volatiles['gmirror'].position === null) return false;
+      if(!target.volatiles['magiccoat']) return false;
+      if(target.volatiles['magiccoat'].position === null) return false;
     },
     effect: {
       duration: 1,
@@ -7591,7 +7591,27 @@ export const Moves: {[moveid: string]: MoveData} = {
       onRedirectTarget(target, source, source2) {
         if(source !== this.effectData.target) return;
         return source.side.foe.active[this.effectData.position];
-      },
+		},
+		onTryHitPriority: 3,
+		onTryHit(target, source, move) {
+			if(!move.flags['protect']) {
+			if(!move.isZ || (move.isMax && !move.breaksProtect)) target.getMoveHitData(move).zBrokeProtect = true;
+			return;
+			}
+			if(move.smartTarget) {
+				move.smartTarget = false;
+			} else {
+				this.add('-activate', target, 'move: Goblins Mirror')
+			}
+			const lockedmove = source.getVolatile('lockedmove');
+			if(lockedmove) {
+				// Outrage counter is reset
+				if(source.volatiles['lockedmove'].duration === 2) {
+					delete source.volatiles['lockedmove'];
+				}
+			}
+			return this.NOT_FAIL;
+		},
       onDamagingHit(damage, target, source, move) {
         if(source.side !== target.side && (move.flags['pulse'] || move.flags['sound'])) {
           this.effectData.position = source.position;
@@ -9173,7 +9193,7 @@ export const Moves: {[moveid: string]: MoveData} = {
               }
           }
     },
-    onTryHit(target) { 
+    onTryHit(target) {
         target.side.removeSideCondition('reflect');
         target.side.removeSideCondition('lightscreen');
         target.side.removeSideCondition('auroraveil');
@@ -15810,7 +15830,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         priority: 0,
         flags: {protect: 1, mirror: 1, contact: 1},
         effect: {
-            onHit(target, source, move) {  
+            onHit(target, source, move) {
               if(target.moveLastTurnResult === null && target.volatiles['flinch'].duration == 1) { //assuming they were flinched.
                     this.modifyDamage(0x96, source, target, move);
                 }
@@ -15818,7 +15838,7 @@ export const Moves: {[moveid: string]: MoveData} = {
         },
         type: "Fighting",
         target: "normal",
-        
+
     },
 	sacredfire: {
 		num: 221,
