@@ -1621,6 +1621,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		isNonstandard: "Past",
 		desc: "If holder has an Electric move, this item allows it to use an Electric Z-Move.",
 	},
+	empoleonite: {
+		name: "Empoleonite",
+		spritenum: 607,
+		megaStone: "Empoleon-Mega",
+		megaEvolves: "Empoleon",
+		itemUser: ["Empoleon"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "CAP",
+		desc: "If held by a Empoleon, this item allows it to Mega Evolve in battle.",
+	},
 	energypowder: {
 		name: "Energy Powder",
 		spritenum: 123,
@@ -2694,6 +2709,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 7,
 		isNonstandard: "Past",
 		desc: "If held by an Incineroar with Darkest Lariat, it can use Malicious Moonsault.",
+	},
+	infernapite: {
+		name: "Infernapite",
+		spritenum: 607,
+		megaStone: "Infernape-Mega",
+		megaEvolves: "Infernape",
+		itemUser: ["Infernape"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "CAP",
+		desc: "If held by a Infernape, this item allows it to Mega Evolve in battle.",
 	},
 	insectplate: {
 		name: "Insect Plate",
@@ -5944,6 +5974,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 3,
 		isPokeball: true,
 		desc: "A Poke Ball that becomes better the more turns there are in a battle.",
+	},
+	torterraite: {
+		name: "Torterraite",
+		spritenum: 607,
+		megaStone: "Torterra-Mega",
+		megaEvolves: "Torterra",
+		itemUser: ["Torterra"],
+		onTakeItem(item, source) {
+			if(item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "CAP",
+		desc: "If held by a Torterra, this item allows it to Mega Evolve in battle.",
 	},
 	toxicorb: {
 		name: "Toxic Orb",
