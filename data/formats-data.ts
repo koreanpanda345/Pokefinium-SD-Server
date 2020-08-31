@@ -43,6 +43,18 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Custom",
 		tier: "CAP",
 	},
+	typhlosionmega: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	meganiummega: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	feraligatrmega: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},

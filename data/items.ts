@@ -1,3 +1,5 @@
+import { inflateSync } from "zlib";
+
 export const Items: {[itemid: string]: ItemData} = {
 	abomasite: {
 		name: "Abomasite",
@@ -1741,6 +1743,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 2,
 		isPokeball: true,
 		desc: "A Poke Ball that makes it easier to catch Pokemon which are quick to run away.",
+	},
+	feraligatrite: {
+		name: "Feraligatrite",
+		spritenum: 607,
+		megaStone: "Feraligatr-Mega",
+		megaEvolves: "Feraligatr",
+		itemUser: ["Feraligatr"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "CAP",
+		desc: "If held by a Feraligatr, this item allows it to Mega Evolve in battle.",
 	},
 	fightinggem: {
 		name: "Fighting Gem",
@@ -3503,6 +3520,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 6,
 		isNonstandard: "Past",
 		desc: "If held by a Medicham, this item allows it to Mega Evolve in battle.",
+	},
+	meganiumite: {
+		name: "Meganiumite",
+		spritenum: 607,
+		megaStone: "Meganium-Mega",
+		megaEvolves: "Meganium",
+		itemUser: ["Meganium"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 655,
+		gen: 6,
+		isNonstandard: "CAP",
+		desc: "If held by a Meganium, this item allows it to Mega Evolve in battle.",
 	},
 	mentalherb: {
 		name: "Mental Herb",
@@ -6966,6 +6998,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 248,
 		gen: 2,
 		desc: "Holder's Psychic-type attacks have 1.2x power.",
+	},
+	typhlosionite: {
+		name: "Typhlosionite",
+		spritenum: 607,
+		megaStone: "Typhlosion-Mega",
+		megaEvolves: "Typhlosion",
+		itemUser: ["Typhlosion"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 669,
+		gen: 6,
+		isNonstandard: "CAP",
+		desc: "If held by a Typhlosion, this item allows it to Mega Evolve in battle.",
 	},
 	tyranitarite: {
 		name: "Tyranitarite",

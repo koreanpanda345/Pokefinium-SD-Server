@@ -130,6 +130,27 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 1.5,
 		num: 83,
 	},
+	antagonize: {
+		desc: "This Pokemon's Normal-type moves become Dark-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Dark type and have 1.2x power.",
+		onModifyTypePriority: -1,
+		onModifyType(move, pokemon) {
+			const noModifyType = [
+				'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
+			];
+			if (move.type === 'Normal' && !noModifyType.includes(move.id) && !(move.isZ && move.category !== 'Status')) {
+				move.type = 'Dark';
+				move.antagonizeBoosted = true;
+			}
+		},
+		onBasePowerPriority: 23,
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.antagonizeBoosted) return this.chainModify([0x1333, 0x1000]);
+		},
+		name: "Antagonize",
+		rating: 4,
+		num: 185,
+	},
 	anticipation: {
 		desc: "On switch-in, this Pokemon is alerted if any opposing Pokemon has an attack that is super effective on this Pokemon, or an OHKO move. Counter, Metal Burst, and Mirror Coat count as attacking moves of their respective types, Hidden Power counts as its determined type, and Judgment, Multi-Attack, Natural Gift, Revelation Dance, Techno Blast, and Weather Ball are considered Normal-type moves.",
 		shortDesc: "On switch-in, this Pokemon shudders if any foe has a supereffective or OHKO move.",
@@ -4069,6 +4090,40 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Sturdy",
 		rating: 3,
 		num: 5,
+	},
+	suckup: {
+		desc: "If a pokemon uses a Poison-type attack against this pokemon, that Pokemon's attacking stat is havled when calculating the damage to this Pokemon. This pokemon can't be poisoned.",
+		shortDesc: "Poison-type moves against this pokemon deals damage with a halved attacking stat. This pokemon can't be poisoned.",
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === "Poison") {
+				this.debug('Suck Up weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === "Poison") {
+				this.debug('Suck Up weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onUpdate(pokemon) {
+			if (pokemon.status === 'psn' || pokemon.status === 'tox') {
+				this.add('-activate', pokemon, 'ability: Suck Up');
+				pokemon.cureStatus();
+			}
+			return false;
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'psn' || status.id !== 'tox') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Suck Up');
+			}
+		},
+		name: "Suck Up",
+		rating: 3.5,
+		num: 47,
 	},
 	suctioncups: {
 		shortDesc: "This Pokemon cannot be forced to switch out by another Pokemon's attack or item.",
