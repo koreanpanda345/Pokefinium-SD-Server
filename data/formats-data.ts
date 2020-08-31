@@ -1,5 +1,5 @@
 export const FormatsData: { [k: string]: SpeciesFormatsData } = {
-	magpie: {
+	maskpie: {
 		isNonstandard: "Custom",
 		tier: "CAP LC",
 	},
