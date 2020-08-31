@@ -142,6 +142,26 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			hiddenpower: ["8L1"],
 		},
 	},
+	akumarae: {
+		learnset: {
+			moltenlava: ["8L1"],
+			recover: ["8L1"],
+			toxic: ["8L1"],
+			stealthrock: ["8L1"],
+			earthpower: ["8L1"],
+			flamethrower: ["8L1"],
+			fireblast: ["8L1"],
+			powergem: ["8L1"],
+			ancientpower: ["8L1"],
+			protect: ["8L1"],
+			substitute: ["8L1"],
+			defog: ["8L1"],
+			clearsmog: ["8L1"],
+			tailwind: ["8L1"],
+			amnesia: ["8L1"],
+			sunnyday: ["8L1"]
+		},
+	},
 	missingno: {
 		learnset: {
 			blizzard: ["3L1"],

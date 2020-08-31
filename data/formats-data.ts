@@ -39,6 +39,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Custom",
 		tier: "CAP",
 	},
+	akumarae: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},

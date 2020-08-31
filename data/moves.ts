@@ -7601,7 +7601,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if(move.smartTarget) {
 				move.smartTarget = false;
 			} else {
-				this.add('-activate', target, 'move: Goblins Mirror')
+				this.add('-activate', source, 'move: Goblins Mirror')
 			}
 			const lockedmove = source.getVolatile('lockedmove');
 			if(lockedmove) {
@@ -12515,6 +12515,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fairy",
 		zMove: {boost: {spd: 1}},
 		contestType: "Beautiful",
+	},
+	moltenlava: {
+		num: 585,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		desc: "If used on a Grass or Bug type Pokémon, this move ignores the effectiveness of this move's type against Grass or Bug and treats it as being super effective against Grass or Bug types instead.",
+		shortDesc: "Move is super effected to Grass and Bug types.",
+		onEffectiveness(typeMod, target, type)
+		{
+			if(type === 'Grass' || type === 'Bug') return 1;
+		},
+		name: "Molten Lava",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondaries: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Cool"
 	},
 	moonblast: {
 		num: 585,

@@ -119,7 +119,17 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
         weightkg: 15,
         color: "Cotton Candy",
         eggGroups: ["Candy"],
-    },
+	 },
+	 akumarae: {
+		 num: -5012,
+		 name: "Akumarae",
+		 types: ["Fire", "Ground"],
+		 genderRatio: {M: 0.5, F: 0.5},
+		 baseStats: {hp: 120, atk: 46, def: 79, spa: 76, spd: 79, spe: 60},
+		 abilities: {0: "Flash Fire", 1: "Magma Armor", H: "Flame Body"},
+		 weightkg: 0.5,
+		 eggGroups: ["Bird"],
+	 },
     bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",
