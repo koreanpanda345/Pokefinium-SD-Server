@@ -1,3 +1,12 @@
+# Pokefinium Showdown Server
+
+This is a Pokemon Showdown Server That was design to hold custom fakemons for a server called IGL Pokefinium.
+
+# Artwork Origin Design Credits
+
+- Ghosunny - From Cowctus on DeviantArt. Check Out their website, and their own pokemon fan game at https://www.projectazurite.com
+
+
 Pokémon Showdown
 ========================================================================
 

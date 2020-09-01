@@ -130,6 +130,18 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		 weightkg: 0.5,
 		 eggGroups: ["Bird"],
 	 },
+	 dusteon: {
+		 num: -5013,
+		 name: "Dusteon",
+		 types: ["Ground"],
+		 genderRatio: {M: 0.5, F: 0.5},
+		 baseStats: {hp: 100, atk: 100, def: 100, spa: 75, spd: 85, spe: 65},
+		 abilities: {0: "Lightning Rod", H: "Sand Stream"},
+		 heightm: 1.0,
+		 weightkg: 30,
+		 color: "Brown",
+		 eggGroups: ["Field"]
+	 },
     bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",

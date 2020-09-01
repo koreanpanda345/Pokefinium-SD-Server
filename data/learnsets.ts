@@ -159,8 +159,23 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			clearsmog: ["8L1"],
 			tailwind: ["8L1"],
 			amnesia: ["8L1"],
-			sunnyday: ["8L1"]
+			sunnyday: ["8L1"],
 		},
+	},
+	dusteon: {
+		learnset: {
+			earthquake: ["8L1"],
+			earthpower: ["8L1"],
+			sandstorm: ["8L1"],
+			stealthrock: ["8L1"],
+			stoneedge: ["8L1"],
+			bodypress: ["8L1"],
+			rockslide: ["8L1"],
+			scorchingsands: ["8L1"],
+			whirlwind: ["8L1"],
+			weatherball: ["8L1"],
+			slackoff: ["8L1"],
+		}
 	},
 	missingno: {
 		learnset: {

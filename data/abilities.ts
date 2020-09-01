@@ -384,8 +384,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			pokemon.abilityData.choiceLock = "";
 		},
 		onBeforeMove(pokemon, target, move) {
-			if(move.isZOrMaxPowered || move.id === 'struggle') return;
-			if(pokemon.abilityData.choiceLock && pokemon.abilityData.choiceLock !== move.id) {
+			if (move.isZOrMaxPowered || move.id === 'struggle') return;
+			if (pokemon.abilityData.choiceLock && pokemon.abilityData.choiceLock !== move.id) {
 				this.addMove('move', pokemon, move.name);
 				this.attrLastMove('[still]');
 				this.debug("Disabled by Bull Tactics");
@@ -394,31 +394,31 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onModifyMove(move, pokemon) {
-			if(pokemon.abilityData.choiceLock || move.isZOrMaxPowered || move.id === 'struggle') return;
+			if (pokemon.abilityData.choiceLock || move.isZOrMaxPowered || move.id === 'struggle') return;
 			pokemon.abilityData.choiceLock = move.id;
 		},
-		onModifyDefPriority: 1,
-		onModifyDef(def, pokemon) {
-			if(pokemon.volatiles['dynmax']) return;
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.volatiles['dynmax']) return;
 			// PLACEHOLDER
 			this.debug('BullTactics Atk Boost');
 			return this.chainModify(1.5);
 		},
 		onDisableMove(pokemon) {
-			if(!pokemon.abilityData.choiceLock) return;
-			if(pokemon.volatiles['dynmax']) return;
-			for(const moveSlot of pokemon.moveSlots) {
-				if(moveSlot.id !== pokemon.abilityData.choiceLock) {
+			if (!pokemon.abilityData.choiceLock) return;
+			if (pokemon.volatiles['dynmax']) return;
+			for (const moveSlot of pokemon.moveSlots) {
+				if (moveSlot.id !== pokemon.abilityData.choiceLock) {
 					pokemon.disableMove(moveSlot.id, false, this.effectData.sourceEffect);
 				}
 			}
 		},
-		onEnd(pokemon){
+		onEnd(pokemon) {
 			pokemon.abilityData.choiceLock = "";
 		},
 		name: "Bull Tactics",
 		rating: 4.5,
-		num: 255
+		num: 255,
 	},
 	cheekpouch: {
 		desc: "If this Pokemon eats a Berry, it restores 1/3 of its maximum HP, rounded down, in addition to the Berry's effect.",
@@ -429,20 +429,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Cheek Pouch",
 		rating: 1.5,
 		num: 167,
-  },
-  cheeryaura: {
-    desc: "Wild Pokemon appear more often, this pokemon has a 10% chance to infatuate the attacking pokemon when any contact is made.",
-    shortDesc: "When this pokemon is hit by a contacting move, there is a 10% chance to infatuate the attacking pokemon.",
-    onDamagingHit(damage, target, source, move){
-      if(move.flags['Contact']) {
-        if((this.randomChance(1, 10)))
-        source.addVolatile('attract', this.effectData.target);
-      }
-    },
-    name: "Cheery Aura",
-    rating: 1.5,
-    num: 167
-  },
+	},
+	cheeryaura: {
+		desc: "Wild Pokemon appear more often, this pokemon has a 10% chance to infatuate the attacking pokemon when any contact is made.",
+		shortDesc: "When this pokemon is hit by a contacting move, there is a 10% chance to infatuate the attacking pokemon.",
+		onDamagingHit(damage, target, source, move) {
+			if (move.flags['Contact']) {
+				if ((this.randomChance(1, 10))) {
+						source.addVolatile('attract', this.effectData.target);				  }
+			}
+		},
+		name: "Cheery Aura",
+		rating: 1.5,
+		num: 167,
+	},
 	chlorophyll: {
 		desc: "If Sunny Day is active and this Pokemon is not holding Utility Umbrella, this Pokemon's Speed is doubled.",
 		shortDesc: "If Sunny Day is active, this Pokemon's Speed is doubled.",
@@ -474,20 +474,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Clear Body",
 		rating: 2,
 		num: 29,
-    },
-    cloakofnightmares: {
-        shortDesc: "If a pokemon makes Contact with Ghosunny, Their Attacks is dropped by 1 stage.",
-        desc: "When a pokemon makes contact with Ghosunny, they see a nightmare, causing them to shake in fear.",
-        onDamagingHit(damage, target, source, move) {
-            if(move.flags['contact']) {
-                this.add('-ability', target, 'Cloak of Nightmares');
-                this.boost({atk: -1}, source, target, null, true);
-            }
-        },
-        name: "Cloak of Nightmares",
-        rating: 10,
-        num: -100
-    },
+		},
+	cloakofnightmares: {
+				shortDesc: "If a pokemon makes Contact with Ghosunny, Their Attacks is dropped by 1 stage.",
+				desc: "When a pokemon makes contact with Ghosunny, they see a nightmare, causing them to shake in fear.",
+				onDamagingHit(damage, target, source, move) {
+						if (move.flags['contact']) {
+								this.add('-ability', target, 'Cloak of Nightmares');
+								this.boost({atk: -1}, source, target, null, true);
+						}
+				},
+				name: "Cloak of Nightmares",
+				rating: 10,
+				num: -100,
+		},
 	cloudnine: {
 		shortDesc: "While this Pokemon is active, the effects of weather conditions are disabled.",
 		onStart(pokemon) {
@@ -1528,20 +1528,20 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Heavy Metal",
 		rating: 0,
 		num: 134,
-  },
-  hirudinea: {
-    desc: "When this pokemon uses any kind of draining type moves, that move's power is increased by 1.2x, and the user recovers an additionial 20% hp back.",
-    shortDesc: "Draining moves power increases by 1.2x, and recovers an additional 20% hp",
-    onBasePower(basePower, pokemon, target, move) {
-      if(move.drain) {
-        pokemon.heal(pokemon.baseMaxhp / 5);
-        return this.chainModify([0x1333, 0x1000]);
-      }
-    },
-    name: "Hirudinea",
-    rating: 0,
-    num: 134
-  },
+	},
+	hirudinea: {
+		desc: "When this pokemon uses any kind of draining type moves, that move's power is increased by 1.2x, and the user recovers an additionial 20% hp back.",
+		shortDesc: "Draining moves power increases by 1.2x, and recovers an additional 20% hp",
+		onBasePower(basePower, pokemon, target, move) {
+			if (move.drain) {
+				pokemon.heal(pokemon.baseMaxhp / 5);
+				return this.chainModify([0x1333, 0x1000]);
+			}
+		},
+		name: "Hirudinea",
+		rating: 0,
+		num: 134,
+	},
 	honeygather: {
 		shortDesc: "No competitive use.",
 		name: "Honey Gather",
@@ -1929,18 +1929,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Klutz",
 		rating: -1,
 		num: 103,
-    },
-    laststand: {
-        desc: "When The user has 50% HP or less, all slashing or sword moves will always result in a critical hit.",
-        shortDesc: "When at 50% HP or less, all slashing or sword moves will have a 100% chance of a critical hit.",
-        onTryMove(source, target, move) {
-            if(source.hp <= Math.floor(Math.round(source.maxhp)) && move.flags['slash']) return move.willCrit = true;
-            return false;
-        },
-        name: "Last Stand",
-        rating: 0.5,
-        num: -1
-    },
+		},		laststand: {
+				desc: "When The user has 50% HP or less, all slashing or sword moves will always result in a critical hit.",
+				shortDesc: "When at 50% HP or less, all slashing or sword moves will have a 100% chance of a critical hit.",
+				onTryMove(source, target, move) {
+						if (source.hp <= Math.floor(Math.round(source.maxhp)) && move.flags['slash']) return move.willCrit = true;
+						return false;
+				},
+				name: "Last Stand",
+				rating: 0.5,
+				num: -1,
+		},
 	leafguard: {
 		desc: "If Sunny Day is active and this Pokemon is not holding Utility Umbrella, this Pokemon cannot gain a major status condition and Rest will fail for it.",
 		shortDesc: "If Sunny Day is active, this Pokemon cannot be statused and Rest will fail for it.",
@@ -2138,19 +2137,19 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Magician",
 		rating: 1.5,
 		num: 170,
-  },
-  magicorb: {
-    shortDesc: "",
-    desc: "",
-    onModifyAccuracy(accuracy) {
-      if(typeof accuracy !== 'number') return;
-      this.debug('Magic Orb - decreasing accuracy');
-      return accuracy * 0.8;
-    },
-    name: "Magic Orb",
-    rating: 0,
-    num: 81
-  },
+	},
+	magicorb: {
+		shortDesc: "",
+		desc: "",
+		onModifyAccuracy(accuracy) {
+			if (typeof accuracy !== 'number') return;
+			this.debug('Magic Orb - decreasing accuracy');
+			return accuracy * 0.8;
+		},
+		name: "Magic Orb",
+		rating: 0,
+		num: 81,
+	},
 	magmaarmor: {
 		shortDesc: "This Pokemon cannot be frozen. Gaining this Ability while frozen cures it.",
 		onUpdate(pokemon) {
@@ -2971,11 +2970,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (move?.category === 'Status') {
 				move.pranksterBoosted = true;
 				return priority + 1;
-            }
-            else if (move?.name === "Houdini's Flames") {
-                move.pranksterBoosted = true;
-                return priority + 1;
-            }
+						} else if (move?.name === "Houdini's Flames") {
+								move.pranksterBoosted = true;
+								return priority + 1;
+						}
 		},
 		name: "Prankster",
 		rating: 4,
@@ -3059,17 +3057,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Protean",
 		rating: 4.5,
 		num: 168,
-  },
-  psychicaura: {
-    shortDesc: "On switch-in, this pokemon summons Psychic Aura.",
-    desc: "",
-    onStart(source) {
-      this.field.setTerrain('psychicterrain');
-    },
-    name: "Psychic Aura",
-    rating: 0,
-    num: 227
-  },
+	},
+	psychicaura: {
+		shortDesc: "On switch-in, this pokemon summons Psychic Aura.",
+		desc: "",
+		onStart(source) {
+			this.field.setTerrain('psychicterrain');
+		},
+		name: "Psychic Aura",
+		rating: 0,
+		num: 227,
+	},
 	psychicsurge: {
 		shortDesc: "On switch-in, this Pokemon summons Psychic Terrain.",
 		onStart(source) {
@@ -3667,19 +3665,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Shields Down",
 		rating: 3.5,
 		num: 197,
-  },
-  shockresponse: {
-    shortDesc: "If the user is hit by a contacting damaging move, the target loses 1/8 of their max hp.",
-    desc: "When attacked this pokemon will respond by flailing its wings and legs for a short period.",
-    onDamagingHitOrder: 1,
-    onDamagingHit(damage, target, source, move) {
-      if(move.flags['contact'])
-        this.damage(source.baseMaxhp / 8, source, target);
-    },
-    name: "Shock Response",
-    rating: 0,
-    num: 100,
-  },
+	},
+	shockresponse: {
+		shortDesc: "If the user is hit by a contacting damaging move, the target loses 1/8 of their max hp.",
+		desc: "When attacked this pokemon will respond by flailing its wings and legs for a short period.",
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (move.flags['contact']) {				  this.damage(source.baseMaxhp / 8, source, target);			  }
+		},
+		name: "Shock Response",
+		rating: 0,
+		num: 100,
+	},
 	simple: {
 		desc: "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead. This Ability does not affect stat stage increases received from Z-Power effects that happen before a Z-Move is used.",
 		shortDesc: "When this Pokemon's stat stages are raised or lowered, the effect is doubled instead.",
@@ -3747,18 +3744,18 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Slush Rush",
 		rating: 2.5,
 		num: 202,
-  },
-  smallwinged: {
-    shortDesc: "If the user's hp is under 25% of thier max hp, then the user is grounded",
-    onBeforeTurn(pokemon) {
-      if(pokemon.hp <= (pokemon.maxhp / 4)){
-        return pokemon.isGrounded(true);
-      }
-    },
-    name: "Small Winged",
-    rating: 0,
-    num: 97
-  },
+	},
+	smallwinged: {
+		shortDesc: "If the user's hp is under 25% of thier max hp, then the user is grounded",
+		onBeforeTurn(pokemon) {
+			if (pokemon.hp <= (pokemon.maxhp / 4)) {
+				return pokemon.isGrounded(true);
+			}
+		},
+		name: "Small Winged",
+		rating: 0,
+		num: 97,
+	},
 	sniper: {
 		shortDesc: "If this Pokemon strikes with a critical hit, the damage is multiplied by 1.5.",
 		onModifyDamage(damage, source, target, move) {
@@ -4313,17 +4310,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Teravolt",
 		rating: 3.5,
 		num: 164,
-  },
-  theorizer: {
-    shortDesc: "On switch-in, this Pokemon's Special Attack is rasied by 1 stage.",
-    desc: "The Pokemon will come up with explanations to the unknown. The Pokemon gets a boost in its Spatk. Stat.",
-    onStart(pokemon) {
-      this.boost({spa: 1}, pokemon);
-    },
-    name: "Theorizer",
-    rating: 0,
-    num: 164
-  },
+	},
+	theorizer: {
+		shortDesc: "On switch-in, this Pokemon's Special Attack is rasied by 1 stage.",
+		desc: "The Pokemon will come up with explanations to the unknown. The Pokemon gets a boost in its Spatk. Stat.",
+		onStart(pokemon) {
+			this.boost({spa: 1}, pokemon);
+		},
+		name: "Theorizer",
+		rating: 0,
+		num: 164,
+	},
 	thickfat: {
 		desc: "If a Pokemon uses a Fire- or Ice-type attack against this Pokemon, that Pokemon's attacking stat is halved when calculating the damage to this Pokemon.",
 		shortDesc: "Fire/Ice-type moves against this Pokemon deal damage with a halved attacking stat.",

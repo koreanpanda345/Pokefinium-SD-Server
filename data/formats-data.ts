@@ -67,6 +67,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Custom",
 		tier: "CAP",
 	},
+	dusteon: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},
