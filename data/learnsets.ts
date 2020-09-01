@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 
 export const Learnsets: { [speciesid: string]: LearnsetData } = {
-	magpie: {
+	maskpie: {
 		learnset: {
 			darkestlariat: ["8L1"],
 			bravebird: ["8L1"],
