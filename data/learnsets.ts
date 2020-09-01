@@ -109893,7 +109893,6 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			workup: ["8M", "7M", "5M"],
 			yawn: ["8E", "7E", "6E", "5E", "4E"],
 			sludgebomb: ["8L1"],
-			toxic: ["8L1"],
 			sludgewave: ["8L1"],
 			toxicspikes: ["8L1"],
 			crosspoison: ["8L1"],
