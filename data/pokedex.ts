@@ -16959,7 +16959,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	},
     veneon: {
         num: -5012,
-        name: "veneon",
+        name: "Veneon",
         types: ['Poison'],
         genderRatio: {'M': 0.5, 'F': 0.5},
         baseStats: {'hp': 80, 'atk': 75, 'def': 85, 'spa': 100, 'spd': 85, 'spe': 100},
