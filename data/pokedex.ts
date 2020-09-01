@@ -142,6 +142,20 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		 color: "Brown",
 		 eggGroups: ["Field"]
 	 },
+	 eeveeon: {
+		num: -5014,
+		name: "Eeveeon",
+		types: ["Normal"],
+		genderRatio: {M: 0.875, F: 0.125},
+		baseStats: {hp: 90, atk: 87, def: 87, spa: 87, spd: 87, spe: 87},
+		abilities: {0: "Scrappy", H: "Elemental Evolution"},
+		heightm: 0.5,
+		weightkg: 10.5,
+		color: "Brown",
+		prevo: "Eevee",
+		evoLevel: 30,
+		eggGroups: ["Field"],
+	 },
     bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",

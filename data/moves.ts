@@ -964,6 +964,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dark",
 		contestType: "Clever",
 	},
+	balancedstars: {
+		num: 813,
+		desc: "This move hits the target 2-5 times. This move's type is changes to be what the user's type is.",
+		shortDesc: "This move hits 2-5 times. This move's type changes to what the user's type.",
+		accuracy: 90,
+		basePower: 25,
+		category: "Special",
+		name: "Balanced Stars",
+		type: "Normal",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		multihit: 5,
+		target: "normal",
+		onModifyType(move, pokemon) {
+			if (pokemon.ignoringItem()) return;
+			move.type = pokemon.getTypes().join();
+		},
+		secondary: null,
+	},
 	banefulbunker: {
 		num: 661,
 		accuracy: true,

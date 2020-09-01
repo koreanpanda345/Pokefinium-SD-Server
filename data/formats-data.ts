@@ -71,6 +71,10 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Custom",
 		tier: "CAP",
 	},
+	eeveeon: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},

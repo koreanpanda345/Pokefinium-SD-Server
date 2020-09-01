@@ -976,6 +976,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 226,
 	},
+	elementalevolution: {
+		desc: "This Pokemon's type changes to match the type of the move it is about to use. This effect comes after all effects that change a move's type.",
+		shortDesc: "This Pokemon's type changes to match the type of the move it uses.",
+		onPrepareHit(source, target, move) {
+			if (move.hasBounced) return;
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if(!source.setType(type)) return;
+				this.add('-start', source, 'typechange', type, '[from] ability: Elemental Evolution');
+			}
+		},
+		name: "Elemental Evolution",
+		rating: 4.5,
+		num: 168,
+	},
 	emergencyexit: {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage bringing it to 1/2 or less of its maximum HP, it immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move; Sheer Force prevents it from activating if the move has a secondary effect. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
 		shortDesc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP.",
