@@ -7580,33 +7580,40 @@ export const Moves: {[moveid: string]: MoveData} = {
   goblinsmirror: {
     num: 447,
     accuracy: true,
-    basePower: 0,
+	 basePower: 0,
+	 damageCallback(pokemon) {
+		 if(!pokemon.volatiles['mirrocoat']) return 0;
+		 return pokemon.volatiles['mirrorcoat'].damage || 1;
+	 },
     category: "Status",
     desc: "",
     shortDesc: "",
     name: "Goblins Mirror",
     pp: 10,
     priority: 4,
-    flags: {},
+    flags: {protect: 1},
     stallingMove: true,
     volatileStatus: 'protect',
     beforeTurnCallback(pokemon) {
-      pokemon.addVolatile('magiccoat');
+      pokemon.addVolatile('mirrorcoat');
     },
     onPrepareHit(pokemon){
       return !!this.queue.willAct && this.runEvent('StallMove', pokemon);
     },
     onTryHit(target, source, move) {
-      if(!target.volatiles['magiccoat']) return false;
-      if(target.volatiles['magiccoat'].position === null) return false;
-    },
+      if(!target.volatiles['mirrorcoat']) return false;
+      if(target.volatiles['mirrorcoat'].position === null) return false;
+	 },
+	 onHit(pokemon) {
+		pokemon.addVolatile('stall');
+	 },
     effect: {
       duration: 1,
       noCopy: true,
       onStart(tareget, source, move) {
         this.effectData.position = null;
         this.effectData.damage = 0;
-      },
+		},
       onRedirectTargetPriority: -1,
       onRedirectTarget(target, source, source2) {
         if(source !== this.effectData.target) return;
@@ -7630,12 +7637,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					delete source.volatiles['lockedmove'];
 				}
 			}
+			
 			return this.NOT_FAIL;
 		},
       onDamagingHit(damage, target, source, move) {
         if(source.side !== target.side && (move.flags['pulse'] || move.flags['sound'])) {
           this.effectData.position = source.position;
-          this.effectData.damage = damage;
+          this.effectData.damage = 2 * damage;
         }
       }
     },

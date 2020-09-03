@@ -75,6 +75,30 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Custom",
 		tier: "CAP",
 	},
+	maguum: {
+		isNonstandard: "Custom",
+		tier: "CAP LC",
+	},
+	buzzdart: {
+		isNonstandard: "Custom",
+		tier: "CAP NFE",
+	},
+	flylord: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	fairoh: {
+		isNonstandard: "Custom",
+		tier: "CAP LC",
+	},
+	faira: {
+		isNonstandard: "Custom",
+		tier: "CAP NFE",
+	},
+	fairagon: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},
