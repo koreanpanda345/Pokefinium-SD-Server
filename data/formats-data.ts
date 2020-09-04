@@ -11425,6 +11425,6 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	},
 	taurospokefinium: {
 		isNonstandard: "Custom",
-		tier: "CAP"
+		tier: "CAP",
 	},
 };
