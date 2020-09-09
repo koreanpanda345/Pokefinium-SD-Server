@@ -8,8 +8,8 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "CAP NFE",
 	},
 	magpocket: {
-		isNonstandard: "Custom",
-		tier: "CAP",
+		isNonstandard: "Past",
+		tier: "OU",
 	},
 	orycto: {
 		isNonstandard: "Custom",
@@ -20,12 +20,12 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "CAP NFE",
 	},
 	cunilagus: {
-		isNonstandard: "Custom",
-		tier: "CAP",
+		isNonstandard: "Past",
+		tier: "OU",
 	},
 	gorouchu: {
-		isNonstandard: "Custom",
-		tier: "CAP",
+		isNonstandard: "Past",
+		tier: "OU",
 	},
 	mantomoto: {
 		isNonstandard: "Custom",
@@ -11404,12 +11404,12 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "Illegal",
 	},
 	veneon: {
-		isNonstandard: "Custom",
-		tier: "CAP",
+		isNonstandard: "Past",
+		tier: "OU",
 	},
 	rotomsaucer: {
-		isNonstandard: "Custom",
-		tier: "CAP",
+		isNonstandard: "Past",
+		tier: "OU",
 	},
 	purrloinpokefinium: {
 		isNonstandard: "Custom",
@@ -11424,7 +11424,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "CAP",
 	},
 	taurospokefinium: {
-		isNonstandard: "Custom",
-		tier: "CAP",
+		isNonstandard: "Past",
+		tier: "OU",
 	},
 };
