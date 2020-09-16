@@ -9641,11 +9641,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.addMove('-anim', attacker, 'Solar Beam', defender);
 				return;
 			}
-			if (this.runEvent('ChargeMove', attacker, defender, move)) {
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
 			}
 			attacker.addVolatile('twoturnmove', defender);
 			return null;
+		},
+		onBasePower(basePower, pokemon, target) {
+			if (['raindance', 'primordialsea', 'sunnyday', 'desolateland', 'sandstorm'].includes(pokemon.effectiveWeather())) {
+				this.debug('weakened by weather');
+				return this.chainModify(0.5);
+			}
 		},
 		secondary: null,
 		target: "normal",

@@ -7386,6 +7386,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 4,
 		desc: "Holder's special attacks have 1.1x power.",
 	},
+	wyvascenite: {
+		name: "Wyvascenite",
+		spritenum: 584,
+		megaStone: "Wyvascen-Mega",
+		megaEvolves: "Wyvascen",
+		itemUser: ["Wyvascen"],
+		onTakeItem(item, source) {
+			if(item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 664,
+		gen: 6,
+		isNonstandard: "CAP",
+		desc: "If held by a Wyvascen, this item allows it to Mega Evolve in battle."
+	},
 	yacheberry: {
 		name: "Yache Berry",
 		spritenum: 567,

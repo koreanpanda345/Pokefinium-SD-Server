@@ -99,6 +99,22 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Custom",
 		tier: "CAP",
 	},
+	wynchire: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	wyvascen: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	wyvascenmega: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	ratoroc: {
+		isNonstandard: "Past",
+		tier: "OU",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},

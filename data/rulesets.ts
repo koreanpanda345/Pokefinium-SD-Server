@@ -312,7 +312,8 @@ export const Formats: {[k: string]: FormatsData} = {
 				"Purrloin-Pokefinium",
 				"Liepard-Pokefinium",
 				"Mirroblin",
-				"Tauros-Pokefinium"
+				"Tauros-Pokefinium",
+				"Ratoroc"
 			];
 			const species = this.dex.getSpecies(set.species || set.name);
 			if (!pokefiniumDex.includes(species.baseSpecies) && !pokefiniumDex.includes(species.name) &&
