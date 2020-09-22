@@ -1944,16 +1944,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Klutz",
 		rating: -1,
 		num: 103,
-		},		laststand: {
-				desc: "When The user has 50% HP or less, all slashing or sword moves will always result in a critical hit.",
-				shortDesc: "When at 50% HP or less, all slashing or sword moves will have a 100% chance of a critical hit.",
-				onTryMove(source, target, move) {
-						if (source.hp <= Math.floor(Math.round(source.maxhp)) && move.flags['slash']) return move.willCrit = true;
-						return false;
-				},
-				name: "Last Stand",
-				rating: 0.5,
-				num: -1,
+		},		
+		laststand: {
+			desc: "When The user has 50% HP or less, all slashing or sword moves will always result in a critical hit.",
+			shortDesc: "When at 50% HP or less, all slashing or sword moves will have a 100% chance of a critical hit.",
+			onTryMove(source, target, move) {
+					if (source.hp <= Math.floor(Math.round(source.maxhp)) && move.flags['slash']) return move.willCrit = true;
+			},
+			name: "Last Stand",
+			rating: 0.5,
+			num: -1,
 		},
 	leafguard: {
 		desc: "If Sunny Day is active and this Pokemon is not holding Utility Umbrella, this Pokemon cannot gain a major status condition and Rest will fail for it.",

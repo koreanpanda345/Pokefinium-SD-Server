@@ -19,7 +19,7 @@ import {crashlogger} from '../lib/crashlogger';
 import {RawProcessManager, StreamWorker} from '../lib/process-manager';
 import {IPTools} from './ip-tools';
 import {Repl} from '../lib/repl';
-import * as Streams from './../lib/streams';
+import * as Streams from '../lib/streams';
 
 type ChannelID = 0 | 1 | 2 | 3 | 4;
 
