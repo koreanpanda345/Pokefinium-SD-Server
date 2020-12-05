@@ -1579,6 +1579,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Beautiful",
 	},
+	bombardment: {
+		num: 1000,
+		accuracy: 85,
+		basePower: 140,
+		category: "Special",
+		desc: "This move has 33% recoil damage. This move has 10% chance to flinch",
+		shortDesc: "33% Recoil Damage, and a 10% chance to flinch",
+		name: "Bombardment",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 10,
+			status: 'flinch'
+		},
+		recoil: [33, 100],
+		target: "normal",
+		type: "Water",
+		contestType: "Cool",
+	},
 	boneclub: {
 		num: 125,
 		accuracy: 85,
@@ -15882,7 +15902,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 							return move.basePower * 2;
 						}
 					}
-					
+
 					return move.basePower;
 				},
 				category: "Physical",

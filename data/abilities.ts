@@ -328,6 +328,64 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2.5,
 		num: 201,
 	},
+	/*
+	onAfterEachBoost(boost, target, source, effect) {
+			if (!source || target.side === source.side) {
+				if (effect.id === 'stickyweb') {
+					this.hint("Court Change Sticky Web counts as lowering your own Speed, and Competitive only affects stats lowered by foes.", true, source.side);
+				}
+				return;
+			}
+			let statsLowered = false;
+			let i: BoostName;
+			for (i in boost) {
+				if (boost[i]! < 0) {
+					statsLowered = true;
+				}
+			}
+			if (statsLowered) {
+				this.add('-ability', target, 'Competitive');
+				this.boost({spa: 2}, target, target, null, true);
+			}
+		},
+	*/
+	/*
+			onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Water Absorb');
+				}
+				return null;
+			}
+		},
+	 */
+
+	besiege: {
+		desc: "Any reduction of stats will heal this Pokemon by 25% of its max HP.",
+		shortDesc: "Reduction in stats will heal this pokemon by 1/4 of its max hp.",
+		onAfterEachBoost(boost, target, source, effect) {
+			if (!source || target.side === source.side) {
+				if (effect.id === 'stickyweb') {
+					this.hint("Court Change Sticky Web counts as lowering your own speed, and Besiege only affects stats lowered by foes.", true, source.side);
+				}
+				return;
+			}
+			let statsLowered = false;
+			let i: BoostName;
+			for (i in boost) {
+				if (boost[i] ! < 0) {
+					statsLowered = true;
+				}
+			}
+			if (statsLowered) {
+				this.add('-ability', target, 'Besiege');
+				this.heal(target.baseMaxhp / 4);
+			}
+		},
+		name: "Besiege",
+		rating: 5,
+		num: 1000,
+	},
 	bigpecks: {
 		shortDesc: "Prevents other Pokemon from lowering this Pokemon's Defense stat stage.",
 		onBoost(boost, target, source, effect) {
@@ -1944,7 +2002,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Klutz",
 		rating: -1,
 		num: 103,
-		},		
+		},
 		laststand: {
 			desc: "When The user has 50% HP or less, all slashing or sword moves will always result in a critical hit.",
 			shortDesc: "When at 50% HP or less, all slashing or sword moves will have a 100% chance of a critical hit.",

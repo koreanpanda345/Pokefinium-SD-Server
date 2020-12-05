@@ -394,6 +394,7 @@ exports.autolockdown = true;
  */
 exports.customavatars = {
 	// 'userid': 'customavatar.png'
+	'igkoreanpanda': 'koreanpanda.png'
 };
 
 /**

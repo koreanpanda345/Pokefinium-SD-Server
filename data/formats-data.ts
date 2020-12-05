@@ -115,6 +115,18 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Past",
 		tier: "OU",
 	},
+	crodylus: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	snappadylus: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	osebydile: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
 	bulbasaur: {
 		tier: "LC",
 	},
