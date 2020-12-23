@@ -68,8 +68,8 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		tier: "CAP",
 	},
 	dusteon: {
-		isNonstandard: "Custom",
-		tier: "CAP",
+		isNonstandard: "Past",
+		tier: "OU",
 	},
 	eeveeon: {
 		isNonstandard: "Custom",
