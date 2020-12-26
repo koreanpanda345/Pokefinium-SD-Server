@@ -4800,6 +4800,25 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2,
 		num: 73,
 	},
+	wipeout: {
+		desc: "Removes all hazard on the user's side of the field upon entry",
+		shortDesc: "Removes hazards on entry",
+		onSwitchIn(pokemon) {
+			this.effectData.switchingIn = true;
+		},
+		onStart(pokemon) {
+			if(!this.effectData.switchingIn) return;
+			const sideConditions = ['spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge'];
+			for (const condition of sideConditions) {
+				if (pokemon.hp && pokemon.side.removeSideCondition(condition)) {
+					this.add('-sideend', pokemon.side, this.dex.getEffect(condition).name, '[from] ability: Wipeout', '[of] ' + pokemon);
+				}
+			}
+		},
+		name: "Wipeout",
+		rating: 5,
+		num : 193
+	},
 	wimpout: {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage bringing it to 1/2 or less of its maximum HP, it immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move; Sheer Force prevents it from activating if the move has a secondary effect. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
 		shortDesc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP.",

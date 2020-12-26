@@ -989,7 +989,40 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			watergun: ["3L1"],
 		},
 	},
-
+	akumu: {
+		learnset: {
+			peekaboo: ["8L1"],
+			nightmare: ["8L1"],
+			hypnosis: ["8L1"],
+			suckerpunch: ["8L1"],
+			fakeout: ["8L1"],
+			"return": ["7L1"],
+			shadowball: ["8L1"],
+			shadowclaw: ["8L1"],
+			toxic: ["8L1"],
+			willowisp: ["8L1"]
+		}
+	},
+	neptudon: {
+		learnset: {
+			closecombat: ["8L1"],
+			hydropump: ["8L1"],
+			bodyslam: ["8L1"],
+			liquidation: ["8L1"],
+			scald: ["8L1"],
+			waterfall: ["8L1"],
+			ironhead: ["8L1"],
+			earthquake: ["8L1"],
+			earthpower: ["8L1"],
+			zenheadbutt: ["8L1"],
+			surf: ["8L1"],
+			raindance: ["8L1"],
+			aquajet: ["8L1"],
+			taunt: ["8L1"],
+			soak: ["8L1"],
+			tridentpierce: ["8L1"]
+		}
+	},
 	bulbasaur: {
 		learnset: {
 			amnesia: ["8M", "7E", "6E", "5E", "4E"],

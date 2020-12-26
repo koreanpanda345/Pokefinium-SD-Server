@@ -13590,12 +13590,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 				name: "Peek-a-Boo",
 				shortDesc: "If the target is asleep, This move will decrease all of the target’s stats by 1 stage. This will wake up the target. Fails if the target is not asleep.",
 				desc: "When the target is sleeping, the user manifests itself into the target’s dream, and terrorizes the target inside their mind. Causing the target to wake up feeling weak.",
-				effect: {
-						onHit(target, source, move) {
-								if (target.status !== 'slp') return;
-								target.cureStatus();
-								this.boost({atk: -1, def: -1, spa: -1, spd: -1, spe: -1}, target, source, move);
-						},
+				onHit(target, source, move) {
+						if (target.status === 'slp') {
+							target.cureStatus();
+							return !!this.boost({atk: -1, def: -1, spa: -1, spd: -1, spe: -1}, target, source, move);
+						}
+						return false;
 				},
 				pp: 30,
 				category: "Status",
@@ -20285,6 +20285,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		zMove: {boost: {accuracy: 1}},
 		contestType: "Clever",
+	},
+	tridentpierce: {
+		num: 813,
+		accuracy: 85,
+		basePower: 100,
+		category: "Physical",
+		desc: "This move has a 10% chance to lower target’s defense by 1, And has a 10% chance to flinch a target",
+		shortDesc: "This move has a 10% chance to lower target’s defense by 1, And has a 10% chance to flinch a target",
+		name: "Trident Pierce",
+		pp: 24,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondaries: [
+			{chance: 10,volatileStatus: 'flinch'},
+			{chance: 10, boosts: {def: -1}}
+		],
+		target: "normal",
+		type: "Water",
+		contestType: "Cool"
 	},
 	tripleaxel: {
 		num: 813,

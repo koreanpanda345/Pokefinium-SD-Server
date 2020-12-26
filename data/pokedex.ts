@@ -326,6 +326,30 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Blue",
 		eggGroups: ["Water"],
 	},
+	akumu: {
+		num: -5027,
+		name: "Akumu",
+		types: ["Normal", "Ghost"],
+		gender: "N",
+		baseStats: {hp: 105, atk: 115, def: 75, spa: 75, spd: 100, spe: 130},
+		abilities: {0: "Prankster", 1: "Cursed Body", H: "Cloak of Nightmares"},
+		heightm: 1.3,
+		weightkg: 3.0,
+		color: "Purple",
+		eggGroups: ["Undiscovered"]
+	},
+	neptudon: {
+		num: -5028,
+		name: "Neptudon",
+		types: ["Water"],
+		gender: "N",
+		baseStats: {hp: 85, atk: 120, def: 85, spa: 110, spd: 85, spe: 85},
+		abilities: {0: "Swift Swim", 1: "Wipeout", H: "Water Veil"},
+		heightm: 1.5,
+		weightkg: 30,
+		color: "Blue",
+		eggGroups: ["Undiscovered"]
+	},
 	bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",

@@ -127,6 +127,14 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 		isNonstandard: "Custom",
 		tier: "CAP",
 	},
+	akumu: {
+		isNonstandard: "Custom",
+		tier: "CAP",
+	},
+	neptudon: {
+		isNonstandard: "Custom",
+		tier: "CAP"
+	},
 	bulbasaur: {
 		tier: "LC",
 	},
