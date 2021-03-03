@@ -13,7 +13,7 @@ export const FormatsData: { [k: string]: SpeciesFormatsData } = {
 	},
 	orycto: {
 		isNonstandard: "Custom",
-		tier: "CAP LC",
+		tier: "CAP LC", 
 	},
 	oryculus: {
 		isNonstandard: "Custom",
