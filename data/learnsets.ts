@@ -1035,7 +1035,7 @@ export const Learnsets: { [speciesid: string]: LearnsetData } = {
 			captivate: ["4M"],
 			celebrate: ["6S5"],
 			charm: ["8M", "7E", "6E", "5E", "4E", "3E"],
-			confide: ["7M", "6M"],
+			confide: ["7M", "6M"], 
 			curse: ["8E", "7E", "7V", "6E", "5E", "4E", "3E"],
 			cut: ["7V", "6M", "5M", "4M", "3M"],
 			defensecurl: ["7V", "3T"],
